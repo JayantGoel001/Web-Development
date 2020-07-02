@@ -6,6 +6,11 @@ Among web professionals, "web development" usually refers to the main non-design
 
 For larger organizations and businesses, web development teams can consist of hundreds of people (web developers) and follow standard methods like Agile methodologies while developing websites. Smaller organizations may only require a single permanent or contracting developer, or secondary assignment to related job positions such as a graphic designer or information systems technician. Web development may be a collaborative effort between departments rather than the domain of a designated department. There are three kinds of web developer specialization: front-end developer, back-end developer, and full-stack developer. Front-end developers are responsible for behavior and visuals that run in the user browser, while back-end developers deal with the servers.
 
+## Chronology
+![Timeline of Web Development](https://github.com/CormacKrum/Web-Development/blob/master/Webdevelopmenttimeline.png)
+
+## Security
+
 Web development takes into account many security considerations, such as data entry error checking through forms, filtering output, and encryption. Malicious practices such as SQL injection can be executed by users with ill intent yet with only primitive knowledge of web development as a whole. Scripts can be used to exploit websites by granting unauthorized access to malicious users that try to collect information such as email addresses, passwords and protected content like credit card numbers.
 
 Some of this is dependent on the server environment on which the scripting language, such as ASP, JSP, PHP, Python, Perl or Ruby is running, and therefore is not necessarily down to the web developer themselves to maintain. However, stringent testing of web applications before public release is encouraged to prevent such exploits from occurring. If some contact form is provided on a website it should include a captcha field in it which prevents computer programs from automatically filling forms and also mail spamming.
