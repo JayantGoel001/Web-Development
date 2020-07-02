@@ -25,17 +25,20 @@ Because new security holes are found in web applications even after testing and 
 ### Front-End Roadmap
 
 * **Learn The Basics**
+
     Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.
     Responsive Web Design is used in all types of modern web development.
     ECMAScript 5 (JavaScript 5) is supported in all modern browsers. Take a good look at it, especially the new array functions.
     
 * **Dig Deeper**
+
     When you feel comfortable with HTML and CSS, it is time to dig deeper.
     You should learn how to use Maps, Fonts, Charts and Icons in HTML.
     On the JavaScript side, you should learn how to access the HTML DOM.
     You should also learn how to use AJAX and JSON for making server requests.
 
 * **Choose Frameworks**
+
     Now it is time to look at some Frameworks.
     On the CSS side you should choose a framework for reponsive web design:
     Bootstrap  /  Material Design  /  W3.CSS
@@ -48,8 +51,10 @@ Because new security holes are found in web applications even after testing and 
 ### Back-End Roadmap
 
 * **FullStack**
+
     It Includes SQL, PHP, ASP and Python.
 * **FullStackJS**
+
     It Includes SQL, Node.js, MySQL and Mongo.db.
     
  ![Image Back End](https://github.com/CormacKrum/Web-Development/blob/master/img_backend.jpg)
