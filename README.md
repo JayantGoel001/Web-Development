@@ -18,3 +18,38 @@ Some of this is dependent on the server environment on which the scripting langu
 Keeping a web server safe from intrusion is often called Server Port Hardening. Many technologies come into play to keep information on the internet safe when it is transmitted from one location to another. For instance TLS certificates (or "SSL certificates") are issued by certificate authorities to help prevent internet fraud. Many developers often employ different forms of encryption when transmitting and storing sensitive information. A basic understanding of information technology security concerns is often part of a web developer's knowledge.
 
 Because new security holes are found in web applications even after testing and launch, security patch updates are frequent for widely used applications. It is often the job of web developers to keep applications up to date as security patches are released and new security concerns are discovered.
+
+
+# Web Development Roadmaps
+
+### Front-End Roadmap
+
+* **Learn The Basics**
+    Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.
+    Responsive Web Design is used in all types of modern web development.
+    ECMAScript 5 (JavaScript 5) is supported in all modern browsers. Take a good look at it, especially the new array functions.
+    
+* **Dig Deeper**
+    When you feel comfortable with HTML and CSS, it is time to dig deeper.
+    You should learn how to use Maps, Fonts, Charts and Icons in HTML.
+    On the JavaScript side, you should learn how to access the HTML DOM.
+    You should also learn how to use AJAX and JSON for making server requests.
+
+* **Choose Frameworks**
+    Now it is time to look at some Frameworks.
+    On the CSS side you should choose a framework for reponsive web design:
+    Bootstrap  /  Material Design  /  W3.CSS
+    On the JavaScript side you should learn at least one modern framework:
+    React.js  /  Angular.js  /  Vue.js   /  W3.JS
+    Maybe the popularity of jQuery has passed the top, but it is still the most used JavaScript framework.
+    
+ ![Image Front End](https://github.com/CormacKrum/Web-Development/blob/master/img_frontend.jpg)
+    
+### Back-End Roadmap
+
+* **FullStack**
+    It Includes SQL, PHP, ASP and Python.
+* **FullStackJS**
+    It Includes SQL, Node.js, MySQL and Mongo.db.
+    
+ ![Image Back End](https://github.com/CormacKrum/Web-Development/blob/master/img_backend.jpg)
