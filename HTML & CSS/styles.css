@@ -1,0 +1,28 @@
+body{
+    font-family: sans-serif;
+    background-color: #2041A6;
+}
+
+h1{
+    color: white;
+    font-size: 44px;
+}
+p{
+    color: white;
+    font-size: 17px;
+}
+
+h2,div,h3{
+    color: white;
+    font-style: italic;
+}
+
+.color{
+    color: deepskyblue;
+}
+
+.thin{
+    font-weight: normal;
+    font-style: oblique;
+    font-size: 50px;
+}
