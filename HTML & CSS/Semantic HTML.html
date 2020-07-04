@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Semantic HTML</title>
+        <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+        <style media="screen">
+            .h1{
+                font-size: 44px;
+                font-weight: bold;
+                margin:12px;
+            }
+            .h2{
+                font-size: 36px;
+                font-weight: bold;
+                margin:12px;
+            }
+            .h3{
+                font-size: 22px;
+                font-weight: bold;
+                margin:12px;
+            }
+            .h4{
+                font-size: 14px;
+                font-weight: bold;
+                margin:12px;
+            }
+            .b{
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="h1">Hello World</div>
+        <div class="h2">Hello World</div>
+        <div class="h3">Hello World</div>
+        <div class="h4">Hello World</div>
+        <!-- Semantic : These tells browser whats in it-->
+        <strong></strong>
+        <em></em>
+
+        <!-- Non Semantic -->
+        <b></b>
+        <i></i>
+        <span></span>
+        <div class=""></div>
+
+        <p>
+            <b>Pillars of Creation</b> is a photograph taken by the Hubble Space Telescope of elephant trunks of interstellar gas and dust in the Eagle Nebula, specifically the Serpens constellation, some 6,500–7,000 light years from Earth. They are so named because the gas and dust are in the process of creating new stars, while also being eroded by the light from nearby stars that have recently formed. Taken on April 1, 1995, it was named one of the top ten photographs from Hubble by Space.com. The astronomers responsible for the photo were Jeff Hester and Paul Scowen from Arizona State University. The region was rephotographed by ESA's Herschel Space Observatory in 2011, and again by Hubble in 2014 with a <span class="b">newer camera.</span>
+        </p>
+        <div>
+            <strong>Pillars of Creation</strong> is a photograph taken by the Hubble Space Telescope of elephant trunks of interstellar gas and dust in the Eagle Nebula, specifically the Serpens constellation, some 6,500–7,000 light years from Earth. They are so named because the gas and dust are in the process of creating new stars, while also being eroded by the light from nearby stars that have recently formed. Taken on April 1, 1995, it was named one of the top ten photographs from Hubble by Space.com. The astronomers responsible for the photo were Jeff Hester and Paul Scowen from <i>Arizona State University</i>. The region was rephotographed by ESA's Herschel Space Observatory in 2011, and again by Hubble in 2014 with a <em>newer camera.</em>
+        </div>
+
+
+        <!--OLD HTML  -->
+        <div >
+            <div class="navbar"></div>
+            <div class="header"></div>
+            <div class="article">
+                <div class="title"></div>
+                <div class="date"></div>
+                <div class="content"></div>
+                <div class="comments"></div>
+            </div>
+            <div class="sidebar"></div>
+            <div class="footer"></div>
+        </div>
+
+        <!-- HTML 5 -->
+        <main>
+            <nav></nav>
+            <header></header>
+            <article>
+                <header></header>
+                <time></time>
+                <section class="content"></section>
+                <section class="comment"></section>
+            </article>
+            <aside></aside>
+            <footer></footer>
+        </main>
+
+    </body>
+</html>
