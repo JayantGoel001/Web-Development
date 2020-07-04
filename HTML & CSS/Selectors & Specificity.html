@@ -21,7 +21,18 @@
     h3:last-child,strong{
         color:blue;
     }
-
+    #main-header h1{
+        color: crimson;
+    }
+    #main-header h1.highlight123{
+        color: blue;
+    }
+    body #main-header h1:first-child.highlight123{
+        color: blue;
+    }
+    /*1. Whichever has more ids will win */
+    /*2. Whichever has more classes will win */
+    /*3. Whichever has more elements will win */
     </style>
 </head>
 <body>
@@ -34,5 +45,8 @@
         <h3>Hello World</h3>
         <strong>I am strong</strong>
     </div>
+    <header id="main-header">
+        <h1 class="highlight123">Hello World</h1>
+    </header>
 </body>
 </html>
