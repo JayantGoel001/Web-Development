@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Selector & Specificity</title>
+    <style media="screen">
+    *{
+        font-weight: normal;
+    }
+    h1.highlight{
+        color: lime;
+        background-color: #333;
+    }
+    div h1{
+        font-size: 66px;
+    }
+
+    h1:first-child{
+        text-transform: uppercase;
+    }
+    h3:last-child,strong{
+        color:blue;
+    }
+
+    </style>
+</head>
+<body>
+    <h1 class="highlight">Hello World</h1>
+    <h2>Hello World</h2>
+    <h3>Hello World</h3>
+    <div class="">
+        <h1>Hello World</h1>
+        <h2>Hello World</h2>
+        <h3>Hello World</h3>
+        <strong>I am strong</strong>
+    </div>
+</body>
+</html>
