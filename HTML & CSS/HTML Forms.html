@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Form</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <style media="screen">
+            body,button,input{
+                font-family: 'Roboto',sans-serif;
+            }
+            h1{
+                font-weight: normal;
+                text-align: center;
+                margin-top: 120px;
+            }
+            form{
+                margin: 0 auto;
+                display: block;
+                width: max-content;
+            }
+            .input-group{
+                margin: 12px 0;
+            }
+            label{
+                margin-right: 12px;
+                font-size: 19px
+            }
+            .input-group input{
+                width: 320px;
+                height: 22px;
+                padding: 2px 10px;
+                font-size: 15px;
+                float: right;
+            }
+            form> input:last-child{
+                display: block;
+                width: 60%;
+                padding: 8px 44px;
+                background-color: #333;
+                border: none;
+                float: right;
+                color: white;
+            }
+            form> input:last-child:hover{
+                opacity: 0.7;
+            }
+            .checkbox-group{
+                margin: 36px 0;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Register an Account</h1>
+        <form action="index.html" method="post" autocomplete="off">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" value="" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="Username">Username</label>
+                <input type="text" name="Username" id="Username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="Confirm_password">Confirm Password</label>
+                <input type="password" name="Confirm_password" id="Confirm_password" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="checkbox" required>
+                <label for="checkbox">I agree with and have read <a href="#">the terms and condition</a></label>
+            </div>
+
+            <input type="submit" name="submit" value="Register">
+        </form>
+    </body>
+</html>
