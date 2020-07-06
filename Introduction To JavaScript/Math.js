@@ -1,0 +1,11 @@
+i=0;
+document.write(++i);
+document.write("<br>");
+document.write(i++);
+document.write("<br>");
+i = i * 2;
+document.write(i);
+document.write("<br>");
+i = i**2;
+document.write(i);
+document.write("<br>");
