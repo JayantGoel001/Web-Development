@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>If Statements</title>
+        <script type="text/javascript">
+            const company = {
+                name:"Apple",
+                founded:"1976",
+                founders:["Steve Jobs","Steve Wozniak","Ronald Wayne"],
+                products:["iphone","macintosh"],
+                ceo:"Tim Cook",
+                createNewProduct:function(productName){
+                    this.products.push(productName);
+                    document.write("Create Product <br>");
+                    return this.products;
+                }
+            }
+            document.write(company.name+"<br>");
+            document.write(company.founded+"<br>");
+            document.write(company.founders+"<br>");
+            document.write(company.products+"<br>");
+            document.write(company.ceo+"<br>");
+            company.createNewProduct("Windows")
+            document.write(company.products+"<br>");
+            document.write(company["name"]+"<br>");
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
