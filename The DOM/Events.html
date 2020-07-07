@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Event</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <style media="screen">
+            html{
+                font-size: 150%;
+            }
+            body,button,input{
+                font-family: 'Oswald',sans-serif;
+            }
+            body{
+                margin: 80px 160px 0;
+            }
+            h1{
+                cursor:default;
+                user-select: none;
+            }
+            input{
+                padding: 14px;
+                padding-right: 320px;
+                border: 1px solid rgba(45,45,45,3);
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form" action="#" method="post" autocomplete="off">
+            <input type="text" placeholder="Type Here" id="main" oninput="inputChanged();">
+        </form>
+
+        <br><br>
+        <script type="text/javascript">
+            let element = document.getElementById("main");
+            element.addEventListener(
+                "click",
+                function(){
+                    console.log("Click");
+                }
+            )
+
+            element.addEventListener(
+                "mouseover",
+                function(){
+                    console.log("Hover");
+                }
+            )
+            element.addEventListener(
+                "mouseleave",
+                function(){
+                    console.log("Unhover");
+                }
+            )
+            element.addEventListener(
+                "input",
+                function(){
+                    console.log("+++++");
+                    inputChanged();
+                }
+            )
+
+
+            function inputChanged(){
+                console.log("Input");
+            }
+            document.getElementById("form").addEventListener(
+                "submit",function(event){
+                    let submit = confirm("Are you sure you want to submit the form?");
+                    if (!submit) {
+                        return event.preventDefault();
+                    }
+                    console.log("Form Submitted");
+                }
+            )
+
+
+        </script>
+    </body>
+</html>
