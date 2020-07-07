@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Getting Elements</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <style media="screen">
+            html{
+                font-size: 150%;
+            }
+            body,button,input{
+                font-family: 'Oswald',sans-serif;
+            }
+            body{
+                margin: 80px 160px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="header">JavaScript In The Web.</h1>
+        <button type="button" name="button" onclick="toggleVisibility();">Toggle Display</button>
+        <br><br>
+        <h1 id="header2">JavaScript In The Web.</h1>
+        <button type="button" name="button" onclick="toggleVisibility2();">Toggle Display</button>
+        <script type="text/javascript">
+            let header = document.getElementById("header");
+            console.log(header);
+
+            function toggleVisibility(){
+                console.log("Toggle");
+                if(header.style.visibility === "hidden"){
+                    header.style.visibility = "visible";
+                }
+                else{
+                    header.style.visibility = "hidden";
+                }
+            }
+
+            // header.style.fontFamily
+
+            let header2 = document.getElementById("header2");
+            console.log(header2);
+
+            function toggleVisibility2(){
+                console.log("Toggle2");
+                if(header2.style.display === "none"){
+                    header2.style.display = "block";
+                }
+                else{
+                    header2.style.display = "none";
+                }
+            }
+
+        </script>
+    </body>
+</html>
