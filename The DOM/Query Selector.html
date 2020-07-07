@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Getting Elements</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <style media="screen">
+            html{
+                font-size: 150%;
+            }
+            body,button,input{
+                font-family: 'Oswald',sans-serif;
+            }
+            body{
+                margin: 80px 160px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JavaScript In The Web.</h1>
+        <h1 class="theme">JavaScript In The Web!!.</h1>
+        <h1 class="theme">JavaScript In The Web.!!!</h1>
+        <h2>JavaScript!</h2>
+        <h2 class="warning">JavaScript!!</h2>
+        <h2 id="footer-header">JavaScript!!!</h2>
+
+        <button type="button" name="button" onclick="toggleVisibility();">Toggle Display</button>
+        <br><br>
+        <script type="text/javascript">
+            //let element = document.querySelector("h1")
+
+            let element = document.querySelectorAll(".theme,.warning, #footer-header2,h2");
+            console.log(element);
+            element  = Array.from(element);
+            let isVisible = true;
+            function toggleVisibility(){
+                isVisible = !isVisible
+                let visibility = isVisible ? "visible" : "hidden";
+                console.log(visibility);
+
+                element.forEach((item, i) => {
+                    item.style.visibility = visibility;
+                });
+            }
+
+        </script>
+    </body>
+</html>
