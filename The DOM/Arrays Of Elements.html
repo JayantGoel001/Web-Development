@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Getting Elements</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <style media="screen">
+            html{
+                font-size: 150%;
+            }
+            body,button,input{
+                font-family: 'Oswald',sans-serif;
+            }
+            body{
+                margin: 80px 160px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="header">JavaScript In The Web.</h1>
+        <h1 class="header">JavaScript In The Web.</h1>
+        <h1 class="header">JavaScript In The Web.</h1>
+        <button type="button" name="button" onclick="toggleVisibility();">Toggle Display</button>
+        <br><br>
+        <h1 id="header2">JavaScript In The Web.</h1>
+        <button type="button" name="button" onclick="toggleVisibility2();">Toggle Display</button>
+        <script type="text/javascript">
+            let element = document.getElementsByClassName("header");
+            console.log(element);
+
+            let isVisible = true;
+            function toggleVisibility(){
+                isVisible = !isVisible
+                let visibility = isVisible ? "visible" : "hidden";
+                console.log(visibility);
+                for (let i = 0; i < element.length; i++) {
+                    element[i].style.visibility = visibility
+                }
+            }
+            // Using For Each
+            element  = Array.from(element);
+            element.forEach((item, i) => {
+                console.log(item,i);
+            });
+
+            // header.style.fontFamily
+
+            let header2 = document.getElementById("header2");
+            console.log(header2);
+
+            function toggleVisibility2(){
+                console.log("Toggle2");
+                if(header2.style.display === "none"){
+                    header2.style.display = "block";
+                }
+                else{
+                    header2.style.display = "none";
+                }
+            }
+
+        </script>
+    </body>
+</html>
