@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Manipulation</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <style media="screen">
+            html{
+                font-size: 150%;
+            }
+            body,button,input,select{
+                font-family: 'Oswald',sans-serif;
+            }
+            body{
+                margin: 80px 160px 0;
+            }
+            h1{
+                cursor:default;
+                user-select: none;
+            }
+            input,select{
+                padding: 14px;
+                padding-right: 320px;
+                border : 1px solid rgba(45,45,45,3);
+                font-size: 32px;
+                height: 58px;
+                box-sizing: content-box;
+            }
+            .blue{
+                color : blue;
+            }
+            .violet{
+                color: darkviolet;
+            }
+            .pink{
+                color: deeppink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="header">JavaScript In The Web.</h1>
+
+        <form id="form" method="post" autocomplete="off">
+            <input type="text" placeholder="Type Here" id="textInput">
+            <select id="dropdown">
+                <option value="" hidden selected disabled>Theme</option>
+                <option value="blue">Blue</option>
+                <option value="violet">Violet</option>
+                <option value="pink">Pink</option>
+
+            </select>
+
+        </form>
+        <script type="text/javascript">
+            let header = document.getElementById("header");
+            let textInput = document.getElementById("textInput");
+            let dropdown = document.getElementById("dropdown");
+            textInput.addEventListener(
+                "input",function(){
+                    let value = textInput.value;
+                    header.innerHTML = value;
+                    document.title = value;
+                    console.log(value);
+            })
+
+            dropdown.addEventListener(
+                "input",function(){
+                    header.classList = "";
+                    header.classList.add(dropdown.value);
+                }
+            )
+
+
+        </script>
+    </body>
+</html>
