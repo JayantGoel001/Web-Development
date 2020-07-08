@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>JQuery</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap">
+        <style media="screen">
+            html{
+                font-size: 150%;
+            }
+            body,button,input{
+                font-family: 'Oswald',sans-serif;
+            }
+            body{
+                margin: 80px 160px 0;
+            }
+            h1{
+                margin : 10px 0;
+            }
+            input{
+                padding: 8px;
+                padding-right: 108px;
+                border : none;
+                font-size: 16px;
+            }
+            .purple{
+                color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" placeholder="Input.....">
+        <h1 id="header">JavaScript in The Web</h1>
+        <h2>Sub Header</h2>
+        <p>
+            The nautilus is a pelagic marine mollusc of the cephalopod family Nautilidae, the sole extant family of the superfamily Nautilaceae and of its smaller but near equal suborder, Nautilina.
+
+            It comprises six living species in two genera, the type of which is the genus Nautilus. Though it more specifically refers to species Nautilus pompilius, the name chambered nautilus is also used for any of the Nautilidae. All are protected under CITES Appendix II.
+
+            Nautilidae, both extant and extinct, are characterized by involute or more or less convolute shells that are generally smooth, with compressed or depressed whorl sections, straight to sinuous sutures, and a tubular, generally central siphuncle. Having survived relatively unchanged for hundreds of millions of years, nautiluses represent the only living members of the subclass nautiloidea, and are often considered "living fossils".
+        </p>
+
+        <p>
+            The "tentacles" of the nautiluses are actually cirri (singular: cirrus), composed of long, soft, flexible appendages which are retractable into corresponding hardened sheaths. Unlike the 8–10 head appendages of coleoid cephalopods, nautiluses have many cirri. In the early embryonic stages of nautilus development a single molluscan foot differentiates into a total of 60–90 cirri, varying even within a species. Nautilus cirri also differ from the tentacles of some coleoids in that they are non-elastic and lack pads or suckers. Instead, nautilus cirri adhere to prey by means of their ridged surface. Nautiluses have a powerful grip, and attempts to take an object already grasped by a nautilus may tear away the animal's cirri, which will remain firmly attached to the surface of the object. The main cirri emerge from sheaths which cohere into a single firm fleshy mass. Also, the pair of cirri before the eye (pre-ocular) and the pair of cirri behind the eye (post-ocular) are separate from the others. These are more evidently grooved, with more pronounced ridges. They are extensively ciliated and are believed to serve an olfactory purpose.
+        </p>
+
+        <!-- jquery cdn slim minified -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            let element = $("h1");
+            console.log(element);
+
+            console.log(element.html());
+
+            element.html("New HTML");
+
+            let everything = $("*").addClass("purple");
+
+            let currentHeaderFontSize = $("#header").css("font-size");
+            console.log(currentHeaderFontSize);
+
+            $("#header").css("font-size","76px");
+
+            $("input").keyup(function(){
+                $("h2").html($("input").val());
+            })
+
+            $("input, h1, h2, p").each(function(i,value){
+                console.log(value);
+                console.log(value.innerHTML);
+            })
+        </script>
+
+    </body>
+</html>
