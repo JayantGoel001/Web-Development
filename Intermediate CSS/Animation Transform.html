@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Transition Animation</title>
+        <style media="screen">
+            h1{
+                text-align: center;
+            }
+            div{
+                background-image: url("https://wallpaperplay.com/walls/full/c/c/7/10473.jpg");
+                width: 400px;
+                height: 200px;
+                margin:170px auto  0px;
+                background-size: cover;
+                transition: transform 1s;
+            }
+            /* JackHammer scale <1 */
+            div:hover{
+                transform: scale(1.5) translate(120px,100px) rotateY(360deg);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <div class="">
+
+        </div>
+    </body>
+</html>
