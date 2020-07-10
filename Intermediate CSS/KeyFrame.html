@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>KeyFrame</title>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+        <style media="screen">
+            body{
+                margin: 120px 220px 0;
+            }
+            body,input{
+                font-family: 'Luckiest Guy',cursive;
+            }
+            .color{
+                color: #E8461A;
+            }
+            h1,input{
+                font-family: 'Luckiest Guy',cursive;
+                font-weight: normal;
+                font-size: 64px;
+            }
+            p{
+                font-family: 'Shadows Into Light Two',cursive;
+                width: 1000px;
+                line-height: 30px;
+                font-size: 19px;
+                letter-spacing: 2px;
+            }
+            input{
+                border: none;
+                border-bottom: 1px solid;
+                outline: none;
+                font-size: 40px;
+                padding: 4px 20px;
+                margin: 38px;
+            }
+            ::placeholder{
+                color: inherit;
+            }
+            @keyframes fade-in-1 {
+                0%{
+                    transform: translate(-160px);
+                    opacity: 0.0;
+                }
+                20%{
+                    opacity: 0.4;
+                }
+                50%{
+                    opacity: 1;
+                }
+                100%{
+                    transform: translate(0) rotate(1deg);
+                }
+            }
+            .fade-in-1{
+                animation: fade-in-1 0.6s 0.2s;
+                /* animation-fill-mode: backwards;
+                animation-fill-mode: forwards; */
+                /* Third Parameter is Delay.*/
+                animation-fill-mode: both;
+            }
+            @keyframes fade-in-2 {
+                0%{
+                    transform: skew(75deg);
+                    opacity: 0.0;
+                }
+                30%{
+                    opacity: 0.8;
+                    transform: skew(0);
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+            .fade-in-2{
+                animation: fade-in-2 2.6s 1s;
+                animation-fill-mode:backwards;
+            }
+
+
+            @keyframes pop-in {
+                0%{
+                    opacity: 0.0;
+                }
+                50%{
+                    transform: scale(1);
+                    opacity: 0.0;
+                }
+                55%{
+                    opacity: 1;
+                    transform: scale(1.05);
+                }
+                100%{
+                    transform: scale(1);
+                }
+            }
+            .pop-in{
+                animation: pop-in 0.6s 2s;
+                animation-fill-mode:backwards;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="color fade-in-1">
+            KeyFrame Animation are Great
+        </h1>
+        <p class="color fade-in-2">
+            Textula The term "textula" is a blend of the English word "text" and the Filipino word "tula!' Meaning text poem, it is a poem written in the form of a text message. Usually consisting of one or two stanzas, it is sent as a direct communication to a person close to the sender. Two examples are presented on the next page.
+        </p>
+        <form class="pop-in" action="#" method="post">
+            <input type="text" class="color" placeholder="Search">
+        </form>
+    </body>
+</html>
