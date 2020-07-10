@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Transition Animation</title>
+        <style media="screen">
+            button{
+                width: max-content;
+                display: block;
+                background-color: #E73F1D;
+                color: white;
+                margin: 150px auto;
+                font-size: 2rem;/*32 px*/
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                padding: 0.6em 2em;
+                transition: all 0.8s;/* background 0.3s;*/
+                    /*Default Timing Function is Ease-In
+                    Others are Ease-out,Ease-in-out,linear  */
+                transition: all 0.5s linear;
+                transition-timing-function: cubic-bezier(0,1,1,0);
+            }
+            button:hover{
+                padding: 100px;
+                background-color: #F05F38;
+                font-size: 3rem;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Two Type of Animation : Transition And KeyFrame -->
+        <button type="button" name="button">Click Here</button>
+        <button type="button" name="button">Click Here</button>
+        <button type="button" name="button">Click Here</button>
+    </body>
+</html>
