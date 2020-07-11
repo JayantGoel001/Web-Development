@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <!-- Always -->
+        <title>Responsive Design : Media Query</title>
+        <style media="screen">
+            body{
+                margin: 12px;
+            }
+            nav,section,aside{
+                border-radius: 12px;
+                margin: 8px 0;
+                background-color: #EB1D71;
+            }
+            nav{
+                height: 160px;
+            }
+            section{
+                display: inline-block;
+                width: 64%;
+                height: 1000px;
+            }
+            aside{
+                width: 35%;
+                height: 1000px;
+                float: right;
+            }
+
+            @media (max-width:1200px) {
+                body{
+                    background-color: blue;
+                }
+                section,aside{
+                    display: block;
+                    width: 100%;
+                    float: none;
+                    margin: 18px 0;
+                    height: 700px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav></nav>
+        <section></section>
+        <aside></aside>
+    </body>
+</html>
