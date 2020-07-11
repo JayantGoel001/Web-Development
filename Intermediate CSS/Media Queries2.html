@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        <!-- <script src="https://kit.fontawesome.com/b82917e056.js" crossorigin="anonymous"></script> -->
+        <!-- Always -->
+        <title>Responsive Design : Media Query</title>
+        <style media="screen">
+            :root{
+                font-size: 340%;
+            }
+            .center{
+                text-align: center;
+                margin: 1rem;
+                font-family: 'Playfair Display',serif;
+                font-weight: normal;
+            }
+            @media (max-width:1600px) {
+                :root{
+                    font-size: 180%;
+                }
+            }
+            @media (max-width:1400px) {
+                :root{
+                    font-size: 160%;
+                }
+            }
+            @media (max-width:1200px) {
+                :root{
+                    font-size: 140%;
+                }
+            }
+            @media (max-width:1000px) {
+                :root{
+                    font-size: 120%;
+                }
+            }
+            @media (max-width:800px) {
+                :root{
+                    font-size: 100%;
+                }
+            }
+            @media (max-width:600px) {
+                :root{
+                    font-size: 80%;
+                }
+            }
+            @media (max-width:400px) {
+                :root{
+                    font-size: 60%;
+                }
+            }
+            @media (max-width:200px) {
+                :root{
+                    font-size: 40%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="center">Hello World</h1>
+        <h2 class="center">Hello World</h2>
+        <h3 class="center">Hello World</h3>
+        <h4 class="center">Hello World</h4>
+        <h5 class="center">Hello World</h5>
+        <h6 class="center">Hello World</h6>
+    </body>
+</html>
