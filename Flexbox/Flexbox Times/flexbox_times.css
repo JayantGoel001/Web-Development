@@ -1,0 +1,5 @@
+/* Set the font-family to chomsky like this. font-family: Chomsky, cursive; */
+@font-face {
+  font-family: chomsky;
+  src: url(Chomsky.otf);
+}

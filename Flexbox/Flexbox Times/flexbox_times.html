@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Flexbox</title>
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="flexbox_times.css">
+        <style media="screen">
+
+            html {
+                font-size: 140%;
+            }
+
+            body {
+                font-family: sans-serif;
+                background-color: #FFFFFD;
+                margin: 32px;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Bebas Neue', cursive;
+                font-weight: normal;
+                margin: 0;
+            }
+
+            p {
+                font-family: serif;
+                font-size: 16px;
+                text-align: justify;
+                margin: 0;
+                padding: 4px 8px;
+                box-sizing: border-box;
+            }
+            header{
+                margin: 22px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header h1{
+                font-family: Chomsky,cursive !important;
+                font-size: 92px;
+            }
+            header div:first-child{
+                margin-left: 8vw;
+            }
+            header div:last-child{
+                margin-right: 8vw;
+            }
+            header div{
+                padding: 12px;
+                border: 1px solid;
+            }
+
+            nav{
+                padding: 8px 0;
+                border-top: 1px solid;
+                border-bottom: 1px solid;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            section{
+                display: flex;
+                align-content: space-between;
+                text-align: justify;
+            }
+            article{
+                margin-top: 18px;
+            }
+            #side-article{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                flex-basis: 800px;
+                max-height: 1000px;
+                flex-shrink: 0.3;
+                overflow: hidden;
+                padding-right: 4px;
+                border-right: 1px solid;
+                margin-right: 10px;
+            }
+
+            #side-article *{
+                width: 50%;
+            }
+            #side-article h3{
+                text-align: center;
+            }
+            #main-article h2{
+                margin-bottom: 10px;
+                font-size: 82px;
+                line-height: 80%;
+            }
+            #main-article img{
+                width: 100%;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <div>
+                <h4>Issue #19</h4>
+            </div>
+            <h1>Flexbox Times</h1>
+            <div>
+                <h4>Above the fold only</h4>
+            </div>
+        </header>
+
+        <nav>
+            <h5>March 4th, 2020</h5>
+            <h5>Established 2020</h5>
+            <h5>Flexbox Times &reg;</h5>
+        </nav>
+
+        <section>
+            <article id="side-article">
+                <h3>10 reasons to learn flexbox today</h3>
+                <p>Business to consumer startup value proposition traction hackathon. Iteration monetization analytics churn rate. Analytics investor beta success user experience rockstar interaction design niche market. Strategy series A financing buyer stock sales business model canvas low hanging fruit angel investor niche market creative seed round. Angel investor vesting period assets. Alpha traction lean startup disruptive series A financing.</p>
+                <p>Marketing research & development ecosystem pitch. Scrum project agile development direct mailing. Launch party investor pivot. Metrics accelerator startup assets. Hypotheses mass market beta innovator series A financing infrastructure. Bandwidth founders sales lean startup direct mailing channels partner network gen-z social media termsheet.</p>
+                <p>User experience virality success MVP equity graphical user interface channels creative partner network A/B testing. Prototype release seed money learning curve agile development crowdsource rockstar market gamification incubator. Equity deployment strategy value proposition direct mailing handshake responsive web design release focus hypotheses pivot early adopters. User experience ecosystem hackathon business-to-consumer. Success traction bootstrapping long tail. Release social proof user experience traction branding conversion investor founders MVP seed round innovator crowdfunding.</p>
+                <p>Ecosystem partner network beta entrepreneur social proof hypotheses infographic. Disruptive business-to-consumer virality strategy founders. Interaction design value proposition conversion iPhone ownership traction marketing technology bandwidth MVP low hanging fruit. Branding social proof assets pivot.</p>
+                <p>Learning curve low hanging fruit advisor startup stealth bootstrapping interaction design graphical user interface branding vesting period handshake holy grail android MVP. IPhone leverage innovator investor android series A financing. Branding crowdfunding focus iPhone. Vesting period traction alpha stealth. Crowdfunding A/B testing stealth incubator beta accelerator iPhone social proof value proposition virality. Conversion gamification mass market business-to-business network effects business-to-consumer return on investment ecosystem partner network scrum project responsive web design creative.</p>
+                <p>Business to consumer startup value proposition traction hackathon. Iteration monetization analytics churn rate. Analytics investor beta success user experience rockstar interaction design niche market. Strategy series A financing buyer stock sales business model canvas low hanging fruit angel investor niche market creative seed round. Angel investor vesting period assets. Alpha traction lean startup disruptive series A financing.</p>
+                <p>Business to consumer startup value proposition traction hackathon. Iteration monetization analytics churn rate. Analytics investor beta success user experience rockstar interaction design niche market. Strategy series A financing buyer stock sales business model canvas low hanging fruit angel investor niche market creative seed round. Angel investor vesting period assets. Alpha traction lean startup disruptive series A financing.</p>
+                <p>Marketing research & development ecosystem pitch. Scrum project agile development direct mailing. Launch party investor pivot. Metrics accelerator startup assets. Hypotheses mass market beta innovator series A financing infrastructure. Bandwidth founders sales lean startup direct mailing channels partner network gen-z social media termsheet.</p>
+                <p>Business to consumer startup value proposition traction hackathon. Iteration monetization analytics churn rate. Analytics investor beta success user experience rockstar interaction design niche market. Strategy series A financing buyer stock sales business model canvas low hanging fruit angel investor niche market creative seed round. Angel investor vesting period assets. Alpha traction lean startup disruptive series A financing.</p>
+                <p>Marketing research & development ecosystem pitch. Scrum project agile development direct mailing. Launch party investor pivot. Metrics accelerator startup assets. Hypotheses mass market beta innovator series A financing infrastructure. Bandwidth founders sales lean startup direct mailing channels partner network gen-z social media termsheet.</p>
+                <p>User experience virality success MVP equity graphical user interface channels creative partner network A/B testing. Prototype release seed money learning curve agile development crowdsource rockstar market gamification incubator. Equity deployment strategy value proposition direct mailing handshake responsive web design release focus hypotheses pivot early adopters. User experience ecosystem hackathon business-to-consumer. Success traction bootstrapping long tail. Release social proof user experience traction branding conversion investor founders MVP seed round innovator crowdfunding.</p>
+                <p>User experience virality success MVP equity graphical user interface channels creative partner network A/B testing. Prototype release seed money learning curve agile development crowdsource rockstar market gamification incubator. Equity deployment strategy value proposition direct mailing handshake responsive web design release focus hypotheses pivot early adopters. User experience ecosystem hackathon business-to-consumer. Success traction bootstrapping long tail. Release social proof user experience traction branding conversion investor founders MVP seed round innovator crowdfunding.</p>
+                <p>User experience virality success MVP equity graphical user interface channels creative partner network A/B testing. Prototype release seed money learning curve agile development crowdsource rockstar market gamification incubator. Equity deployment strategy value proposition direct mailing handshake responsive web design release focus hypotheses pivot early adopters. User experience ecosystem hackathon business-to-consumer. Success traction bootstrapping long tail. Release social proof user experience traction branding conversion investor founders MVP seed round innovator crowdfunding.</p>
+
+            </article>
+            <article id="main-article">
+                <h2>We can finally vertical align element in CSS using flexbox</h2>
+                <img src="https://images.unsplash.com/photo-1520531158340-44015069e78e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
+            </article>
+        </section>
+    </body>
+</html>
