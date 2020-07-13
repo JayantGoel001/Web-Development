@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Aligning Content</title>
+        <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
+        <style media="screen">
+            body{
+                font-family: 'Days One',sans-serif;
+                margin: 50px 120px 32px;
+                color: crimson;
+            }
+            h1,h2,h3{
+                font-weight: normal;
+            }
+            div{
+                background-color: deepskyblue;
+                height: 240px;
+                width: 200px;
+                margin: 0 12px;
+
+                flex: 1 0 400px;/*grow,shrink,basis*/
+
+                flex-grow: 1; /*By Default 0*/
+                flex-shrink: 0;
+                flex-basis: 400px;
+            }
+            /* div:nth-of-type(2){
+                flex-grow: 3;
+            } */
+            div:nth-of-type(2){
+                flex-shrink: 2;
+            }
+
+            main{
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div></div>
+            <div></div>
+            <div></div>
+        </main>
+
+    </body>
+</html>
