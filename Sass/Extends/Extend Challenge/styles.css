@@ -1,0 +1,45 @@
+body, button {
+  margin: 0;
+  font-family: 'Stalemate',cursive; }
+
+header {
+  padding: 62px;
+  padding-bottom: 300px;
+  background-color: #F1245F; }
+  header h1 {
+    color: white;
+    text-align: center;
+    cursor: default;
+    transition: all 1s;
+    font-size: 142px;
+    font-weight: normal; }
+
+.btn, .btn-large, .btn-small, .btn-pill, .btn-outline {
+  outline: none;
+  border: none;
+  background-color: white;
+  padding: 0.3em 2em;
+  border-radius: 4px;
+  font-size: 42px;
+  color: #F1245F;
+  transition: all 0.4s; }
+  .btn:hover, .btn-large:hover, .btn-small:hover, .btn-pill:hover, .btn-outline:hover {
+    transform: scale(1.2);
+    opacity: 0.6; }
+
+.btn-large {
+  font-size: 56px; }
+
+.btn-small {
+  font-size: 30px; }
+
+.btn-pill {
+  padding-left: 2.8em;
+  padding-right: 2.8em;
+  border-radius: 10000px; }
+
+.btn-outline {
+  color: white;
+  background-color: transparent;
+  border: 2px solid;
+  box-shadow: inset 0 0 0 2px white; }
