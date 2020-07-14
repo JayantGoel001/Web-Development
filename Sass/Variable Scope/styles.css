@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  background-color: #1C3C99; }
+
+header {
+  padding: 62px;
+  background-color: #1843BE; }
+  header h1 {
+    color: white;
+    text-align: center;
+    cursor: default;
+    transition: all 1s;
+    font-family: 'Stalemate',cursive;
+    font-size: 142px;
+    font-weight: normal; }
+
+h2 {
+  background-color: white;
+  color: #1843BE;
+  padding: 22px 0;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Stalemate',cursive;
+  font-size: 102px;
+  font-weight: normal; }
