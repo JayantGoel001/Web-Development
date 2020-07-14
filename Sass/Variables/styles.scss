@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+header{
+    $bg-color : #F1245F;
+    $align : center;
+    $padding : 62px 12px;
+    $rounded : true;
+    $cursor : null;
+    $animate : (transform,font-size,opacity); //Value will be 1 2 3
+    $header-size : (
+        'h1':142px,
+        'h2':102px,
+        'h3':78px
+    );
+
+
+    padding: $padding;
+    overflow: hidden;
+    background-color: $bg-color;
+    h1{
+        color: white;
+        text-align: $align;
+        cursor: $cursor;
+        transition: nth($animate, 2) 1s;
+        font: {
+            family:'Stalemate',cursive;
+            size:map-get($header-size,'h3');
+            weight:normal;
+        }
+
+    }
+}
