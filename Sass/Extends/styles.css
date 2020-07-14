@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: 'Stalemate',cursive;
+  background-color: #F1245F; }
+
+header {
+  padding: 62px; }
+  header h1 {
+    color: white;
+    text-align: center;
+    cursor: default;
+    transition: all 1s;
+    font-size: 142px;
+    font-weight: normal; }
+
+.alert, .alert-warning, .alert-danger {
+  margin: 22px;
+  padding: 2px 28px;
+  font-size: 42px;
+  background-color: white;
+  color: #F1245F;
+  border-radius: 12px;
+  word-spacing: 6px; }
+
+.alert-warning {
+  background-color: #ED1646;
+  color: white; }
+
+.alert-danger {
+  background-color: #BD1646;
+  color: hotpink; }
