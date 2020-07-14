@@ -1,0 +1,50 @@
+
+$theme-primary :#A6F55F;
+
+@mixin button-reset($padding,$radius){
+    outline: none;
+    border: none;
+    border-radius: $radius;
+    padding: $padding;
+}
+
+@mixin theme-invert(){
+    color: $theme-primary;
+    background-color: white;
+}
+
+button{
+    @include button-reset(12px 144px, 1000px);
+    margin: 0 auto;
+    display: block;
+    width: max-content;
+    font-family: 'Stalemate',cursive;
+    font-size: 56px;
+    @include theme-invert()
+    transition: all 0.4s;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+
+body{margin: 0;}
+header{
+    $padding:62px;
+    padding: $padding;
+    background-color: $theme-primary;
+    h1{
+        color: white;
+        text-align: center;
+        cursor: default;
+        transition: all 1s;
+        font: {
+            family:'Stalemate',cursive;
+            size:142px;
+            weight:normal;
+        }
+    }
+    button{
+
+    }
+}
