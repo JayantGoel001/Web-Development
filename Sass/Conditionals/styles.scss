@@ -1,0 +1,57 @@
+
+body{
+    margin: 0;
+}
+header{
+    $padding:62px;
+    padding: $padding;
+    padding-bottom: 300px;
+    background-color: #F1245F;
+    overflow: hidden;
+    h1{
+        color: white;
+        text-align: center;
+        cursor: default;
+        transition: all 0.6s;
+        position: relative;
+        z-index: 10;
+        font: {
+            family:'Stalemate',cursive;
+            size:142px;
+            weight:normal;
+        }
+    }
+}
+
+@mixin nudge($dir,$amount) {
+    @if $dir == "top"{
+        bottom: $amount;
+    }@else if $dir=="bottom"{
+        top: $amount;
+    }@else if $dir=="left"{
+        right: $amount;
+    }@else if $dir=="right"{
+        left:$amount;
+    }
+    @else{
+        @warn "Incorrect Argument passes Into Nudge";
+    }
+}
+
+h1:last-child{
+
+    @include nudge("top",280px);
+    @include nudge("right",20px);
+    z-index: 0;
+    opacity: 0.3;
+    transition: all 0.6s;
+}
+
+h1:first-child:hover{
+    transform: scale(0.7);
+    opacity: 0.3;
+}
+h1:first-child:hover+h1{//Next h1 tag will be hovered.
+    transform: scale(0.7);
+    opacity: 0.3;
+}
