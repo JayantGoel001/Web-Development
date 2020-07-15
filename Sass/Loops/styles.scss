@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+header{
+    $padding:62px;
+    padding: $padding;
+    background-color: #F1245F;
+    *{
+        color: white;
+        text-align: center;
+        cursor: default;
+        margin: 0.12em 0;
+        transition: all 1s;
+        font: {
+            family:'Stalemate',cursive;
+            size:142px;
+            weight:normal;
+        }
+    }
+}
+
+// $header-sizes:(8rem,6rem,5rem,4rem,3rem,2.2rem);
+//
+// @for $i from 1 through length($header-sizes){
+//     h#{$i}{
+//         font-size: nth($header-sizes, $i);
+//     }
+// }
+
+$header-sizes:(
+h1:10rem,
+h2:6rem,
+h3:5rem,
+h4:4rem,
+h5:3rem,
+h6:2.2rem,
+);
+
+@each $element,$size in $header-sizes{
+    #{$element}{
+        font-size: $size;
+    }
+}
