@@ -14,7 +14,6 @@ header{
         'h3':78px
     );
 
-
     padding: $padding;
     overflow: hidden;
     background-color: $bg-color;
@@ -28,6 +27,5 @@ header{
             size:map-get($header-size,'h3');
             weight:normal;
         }
-
     }
 }
