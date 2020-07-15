@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+}
+header{
+    $padding:62px;
+    padding: $padding;
+    background-color: #F1245F;
+    *{
+        color: white;
+        text-align: center;
+        cursor: default;
+        margin: 0.12em 0;
+        transition: all 1s;
+        font: {
+            family:'Stalemate',cursive;
+            size:142px;
+            weight:normal;
+        }
+    }
+}
