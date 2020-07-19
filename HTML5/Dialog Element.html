@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dialog Element</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:500,800&disply=swap">
+        <style media="screen">
+            body,button,input{
+                font-family: 'Raleway',sans-serif;
+            }
+            body{
+                margin: 88px 120px 0;
+            }
+            .btn{
+                background-color: #CBCBCB;
+                background-image: linear-gradient(to left,#315EEA,#2A5BF4);
+                color: white;
+                outline: none;
+                border: none;
+                font-size: 19px;
+                padding: 0.8em 3em;
+                border-radius: 4px;
+                transition: all 0.2s;
+                text-transform: uppercase;
+            }
+            .btn:hover{
+                opacity: 0.8;
+            }
+            .btn-danger{
+                background-image: linear-gradient(to left,#E63131,#F42A2A);
+            }
+            dialog{
+                border: none;
+                text-align: center;
+                font-size: 1.2rem;
+                background-color: #F5F5F5;
+                padding: 2.6rem 6.6rem;
+                border-left: 12px solid #315EEA;
+            }
+
+            dialog[open]{
+                animation: slide-in ease 0.5s 0.1s;
+                animation-fill-mode: both;
+            }
+
+            dialog::backdrop{
+                background-color: rgba(29,29,29,.96);
+            }
+
+            dialog[open]::backdrop{
+                animation: fade-in 0.3s;
+                animation-fill-mode: both;
+            }
+            @keyframes fade-in {
+                from { opacity: 0; }
+                to{ opacity: 1; }
+            }
+
+            @keyframes slide-in {
+                from{
+                    transform: translate(-100vw);
+                }
+                to{
+                    transform: translate(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Dialog Element</h1>
+        <button type="button" name="button" class="btn btn-danger" onclick="showModal();">DELETE</button>
+        <dialog id="modal">
+            <h2>Are u sure?</h2>
+            <button type="button" name="button" class="btn" onclick="confirmDelete();closeModaL();">Confirm</button>
+            <button type="button" name="button" class="btn btn-danger" onclick="closeModaL();">Cancel</button>
+        </dialog>
+
+        <script type="text/javascript">
+            let modal = document.getElementById('modal');
+
+
+            function confirmDelete() {
+                console.log("Delete");
+            }
+            function showModal() {
+                modal.showModal();
+            }
+            function closeModaL(){
+                modal.close();
+            }
+        </script>
+    </body>
+</html>
