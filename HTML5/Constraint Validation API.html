@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Dry Code : Dont Repeat yourself -->
+        <!-- Wet Code : Write Everything 2 times or more -->
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500,800&display=swap" rel="stylesheet">
+        <title>Constraint Validation API</title>
+        <style media="screen">
+
+            :root {
+                --color: #7B1BF0;
+            }
+
+            body, input, button {
+                font-family: 'Raleway', sans-serif;
+            }
+
+            body {
+                margin: 118px 320px 0;
+                color: var(--color);
+            }
+
+            input {
+                letter-spacing: 2px;
+                color: inherit;
+                font-weight: 500;
+                font-size: 24px;
+                width: 400px;
+                display: block;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid;
+                padding: 4px 10px;
+                margin: 42px 0;
+            }
+
+            ::placeholder {
+                color: inherit;
+                opacity: .6;
+            }
+
+            button {
+                font-size: 24px;
+                outline: none;
+                border: none;
+                border: 3px solid;
+                background-color: white;
+                color: var(--color);
+                padding: 6px 38px;
+                border-radius: 10000px;
+                transition: all .2s;
+            }
+
+            button:hover {
+                background-color: var(--color);
+                color: white;
+                border-color: var(--color);
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <!-- This is the starter code.  Note: --color property has a different value. -->
+
+        <h1>Register</h1>
+        <form action="" method="post" id="register" autocomplete="off">
+
+            <input type="username" name="username" placeholder="Username" required username>
+            <input type="password" name="pass" placeholder="Password" required>
+            <input type="password" name="con_pass" placeholder="Confirm Password" required>
+
+            <button type="submit" name="button">Register</button>
+        </form>
+
+        <script type="text/javascript">
+            let form = document.forms.register;
+            function validateForm() {
+
+                console.log("Validation");
+                form.username.setCustomValidity("");
+                form.pass.setCustomValidity("");
+                form.con_pass.setCustomValidity("");
+
+                if (form.username.value.length<6) {
+                    form.username.setCustomValidity("Username must be atleast 6 charater.");
+                }
+
+                if (form.pass.value.length<8) {
+                    form.pass.setCustomValidity("Password must be atleast 8 charater.");
+                }
+
+                if (form.pass.value!=form.con_pass.value) {
+                    form.con_pass.setCustomValidity("Password must be equal.");
+                }
+
+            }
+            form.addEventListener("input",validateForm);
+        </script>
+    </body>
+</html>
