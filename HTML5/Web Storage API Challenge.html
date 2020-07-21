@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500,800&display=swap" rel="stylesheet">
+        <title>HTML5</title>
+        <style media="screen">
+
+            body, input {
+                font-family: 'Raleway', sans-serif;
+            }
+
+            .flex {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            body {
+                min-height: 100vh;
+                background-size: cover;
+                background-position: center;
+                margin: 0;
+
+            }
+
+            section {
+                padding-bottom: 16vh;
+                flex-grow: 1;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 56px;
+            }
+
+            h2 {
+                margin: 32px 0 6px;
+            }
+
+            input {
+                display: block;
+                margin: 0 auto;
+            }
+
+            input[type="url"] {
+                color: inherit;
+                font-size: 18px;
+                width: 400px;
+                background-color: transparent;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid;
+                text-align: center;
+                margin-top: 10px;
+
+            }
+
+            ::placeholder {
+                color: inherit;
+            }
+
+
+        </style>
+    </head>
+    <body class="flex" onload="onLoad();">
+
+        <section id="section" class="flex">
+            <h1>Web Storage API Challenge</h1>
+
+            <h2>Choose Background Image</h2>
+            <input id="url" type="url" name="image" placeholder="URL" oninput="setBackground();">
+
+            <h2>Set Overlay Color</h2>
+            <input id="bg-color" type="color" name="bg-color" value="#ffffff" oninput="setOverlayColor();">
+
+            <h2>Set Overlay Transparency</h2>
+            <input id="opacity" type="range" step=".01" min="0" max="1" oninput="setOverlayColor();">
+
+            <h2>Set Text Color</h2>
+            <input id="text-color" type="color" name="text-color" oninput="setTextColor();">
+        </section>
+
+        <script type="text/javascript">
+
+            var localStorage = ('localStorage' in window);
+            let userForm = document.section;
+            function setBackground() {
+                var imageUrl = document.getElementById('url').value;
+                document.body.style.backgroundImage = "url("+imageUrl+ ")";
+                saveData("imageurl",imageUrl);
+            }
+
+            function setTextColor() {
+                var Color = document.getElementById("text-color").value;
+                document.body.style.color = Color;
+                saveData("textcolor",Color);
+            }
+            function setOverlayColor() {
+                var bg_Color = document.getElementById("bg-color").value;
+                let rgb = hexToRgb(bg_Color);
+                var transparent = document.getElementById("opacity").value;
+                let Color = `rgba(${rgb.r},${rgb.g},${rgb.b},${transparent})`;
+                document.getElementById('section').style.backgroundColor = Color;
+                saveData("bgcolor",bg_Color);
+                saveData("opacity",transparent);
+            }
+
+            function hexToRgb(hex) {
+                var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result?{
+                    r:parseInt(result[1],16),
+                    g:parseInt(result[2],16),
+                    b:parseInt(result[3],16)
+                }:null;
+            }
+
+            function saveData(key,value) {
+                if (localStorage) {
+                    localStorage.setItem(key,value);
+                }
+                else{
+                    alert("Not Found");
+                }
+            }
+
+            function loadData(key) {
+                if (localStorage) {
+                    if (key in localStorage) {
+                        return localStorage.getItem(key);
+                    }
+                }
+                else{
+                    alert("NOT FOUND");
+                }
+            }
+
+            function onLoad() {
+                if (loadData("imageurl")) {
+                    let backgroundImage = loadData("imageurl");
+                    let textcolor = loadData("textcolor");
+                    let bgcolor = loadData("bgcolor");
+                    let opacity = loadData("opacity");
+                    // loadData("imageUrl") && document.getElementById("url").value = loadData("imageUrl");
+
+                    document.getElementById('url').setAttribute("value",backgroundImage);
+                    document.getElementById('text-color').setAttribute("value",textcolor);
+                    document.getElementById('bg-color').setAttribute("value",bgcolor);
+                    document.getElementById('opacity').setAttribute("value",opacity);
+                    setBackground();
+                    setTextColor();
+                    setOverlayColor();
+                }
+            }
+        </script>
+
+    </body>
+</html>
