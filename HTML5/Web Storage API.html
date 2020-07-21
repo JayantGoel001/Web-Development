@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Web Storage API</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500,800&display=swap" rel="stylesheet">
+        <style media="screen">
+            body,input{
+                font-family: 'Raleway',sans-serif;
+            }
+            body{
+                margin: 88px 120px 0;
+            }
+            h1{
+                font-size: 58px;
+            }
+            button{
+                margin-top: 12px;
+            }
+
+            .hide{
+                display: none;
+            }
+        </style>
+    </head>
+    <body onload="refresh()">
+        <h1 id="welcome" class="hide">Welcome Back, <span id="user-name"></span></h1>
+
+        <form  action="#" method="post" id="user" onsubmit="updateUser(event);" autocomplete="off">
+            <h2>What's Your name?</h2>
+            <input type="text" name="name" placeholder="Your Name here.">
+
+            <h2>What's Your Favorite Color?</h2>
+            <input type="color" name="color" value="#FFFFFF">
+            <br>
+
+            <button type="submit" name="update" onclick="updateUser(event);">Update</button>
+            <button type="button" class="hide" id="delete-button" onclick="deleteAll();">Delete Data</button>
+        </form>
+
+        <script type="text/javascript">
+            var localStorage = ('localStorage' in window);
+            let userForm = document.forms.user;
+
+            function updateUser(event){
+                event.preventDefault();
+                console.log("Update User");
+                saveData("name",userForm.name.value);
+                saveData("favColor",userForm.color.value);
+                refresh();
+            }
+
+            function saveData(key,value) {
+                if (localStorage) {
+                    localStorage.setItem(key,value);
+                }
+                else{
+                    alert("Storage Is Not support");
+                }
+            }
+
+            function loadData(key) {
+                if (localStorage) {
+                    if (key in localStorage) {
+                        return localStorage.getItem(key);
+                    }
+                }
+                else{
+                    alert("Storage Is Not Supported");
+                }
+            }
+
+            function refresh() {
+                if (loadData("name")) {
+                    let name = loadData("name");
+                    let color = loadData("favColor");
+                    userForm.name.setAttribute("value",name);
+                    userForm.color.setAttribute("value",color);
+                    document.getElementById("welcome").style.display = "block";
+                    document.getElementById("user-name").innerHTML = name;
+
+                    document.body.style.backgroundColor = color;
+                    document.getElementById('delete-button').style.display = 'inline';
+                }
+            }
+
+            function deleteData(key) {
+                if(localStorage){
+                    localStorage.removeItem(key);
+                }
+                else{
+                    alert("Storage Not Supported.");
+                }
+            }
+
+            function deleteAll() {
+                deleteData("name");
+                deleteData("favColor");
+
+                // localStorage.clear();
+                location.reload();
+            }
+        </script>
+    </body>
+</html>
