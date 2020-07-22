@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>IndexedDB</title>
+        <style media="screen">
+            body,input{
+                font-family: 'Raleway',sans-serif;
+            }
+            body{
+                margin: 88px 120px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="button" type="button" name="button">Add Song to Playlist.</button>
+        <script type="text/javascript">
+
+            let database;
+
+            window.onload = function() {
+                let req = window.indexedDB.open("MyPlaylist",1);
+
+                req.onsuccess = function() {
+                    database = req.result;
+                }
+                req.onerror = function(event){
+                    alert("There is an error:",event);
+                }
+
+                req.onupgradeneeded = function(event) {
+                    let db = req.result;
+                    let objectStore = db.createObjectStore("Songs", {
+                        keyPath:"id" ,autoIncrement : true
+                    });
+                }
+            }
+
+            function Song(name,artist) {
+                this.name = name;
+                this.artist = artist;
+            }
+
+
+            function addSong(song,success,error) {
+                let transaction = database.transaction(["Songs"],"readwrite");
+                let objectStore = transaction.objectStore("Songs");
+
+                let request = objectStore.add(song);
+                request.onerror = error;
+                request.onsuccess = success;
+            }
+
+            document.getElementById('button').addEventListener("click",function(){
+                let mySong = new Song("Pumped Up","Foster The people");
+                addSong(mySong,function()
+                {
+                //     readSongs(function(songs){
+                //         console.log(songs);
+                //     },function()
+                //     {
+                //         console.log("Error in reading songs");
+                //     });
+                //     readOneSong(5,function(song) {
+                //         console.log("SOng IS",song);
+                //     });
+                //     let newSong = new Song("Hello Hui","Weezer");
+                //     updateSong(newSong,1,function(){
+                //         console.log("Updated Song");
+                //         readOneSong(1,function(son) {
+                //             console.log("Song No.1 is ",son);
+                //         });
+                //     });
+                // },function(){
+                //     console.log("Error");
+                });
+                // deleteSong(10,function() {
+                //     readSongs(function(songs) {
+                //         console.log(songs);
+                //     })
+                // });
+                deleteAllSong(function() {
+                    addSong(mySong,function() {
+                        readSongs(function(songs) {
+                            console.log(songs);
+                        })
+                    })
+                })
+            });
+            // CRUD Create,Read,Update& Delete.
+
+            function readSongs(success,error) {
+                let transaction = database.transaction(["Songs"],"readonly");
+                let objectStore = transaction.objectStore("Songs");
+
+                let request = objectStore.openCursor();
+
+                request.onerror = error;
+
+                let songs = [];
+
+                request.onsuccess = function(event) {
+                    let cursor = event.target.result;
+                    if (cursor) {
+                        let song = cursor.value;
+                        songs.push(song);
+                        cursor.continue();
+                    }
+                    else{
+                        success(songs);
+                    }
+                }
+            }
+
+            function readOneSong(id,success,error) {
+                let transaction = database.transaction(["Songs"],"readonly");
+                let objectStore = transaction.objectStore("Songs");
+
+                let request = objectStore.get(id);
+                request.onerror = error;
+                request.onsuccess = function() {
+                    success(request.result);
+                }
+            }
+
+            function updateSong(song,id,success,error) {
+                song.id = id;
+                let transaction = database.transaction(["Songs"],"readwrite");
+                let objectStore = transaction.objectStore("Songs");
+
+                let request = objectStore.put(song);
+
+                request.onerror = error;
+                request.onsuccess = success;
+            }
+
+            function deleteSong(id,success,error) {
+                let transaction = database.transaction(["Songs"],"readwrite");
+                let objectStore = transaction.objectStore("Songs");
+
+                let request = objectStore.delete(id);
+
+                request.onerror = error;
+                request.onsuccess = success;
+            }
+            function deleteAllSong(success,error) {
+                let transaction = database.transaction(["Songs"],"readwrite");
+                let objectStore = transaction.objectStore("Songs");
+
+                let request = objectStore.clear();
+
+                request.onerror = error;
+                request.onsuccess = success;
+            }
+        </script>
+    </body>
+</html>
