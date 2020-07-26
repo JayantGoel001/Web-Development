@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style media="screen">
+            body{
+                margin: 42px 0;
+            }
+            .overlay{
+                position: relative;
+            }
+            .overlay::before{
+                content: "";
+                background-color: rgba(37,37,37,0.4);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+            }
+            .overlay.overlay-primary::before{
+                background-color: rgba(0,123,255,0.6);
+            }
+            .overlay.overlay-success::before{
+                background-color: rgba(33,136,56,0.6);
+            }
+            .overlay.overlay-danger::before{
+                background-color: rgba(200,35,51,0.6);
+            }
+        </style>
+    </head>
+    <body >
+        <div class="container">
+            <div class="card w-25 bg-primary text-light">
+                <div class="card-header">
+                    <h3>Cards</h3>
+                    <h6>...Are Awesome</h6>
+                </div>
+
+                <div class="overlay">
+                    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title">Awesomeness!</h4>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary">Learn More</a>
+                </div>
+
+                <div class="list-group list-group-flush text-primary">
+                    <li class="list-group-item text-center">Text Center</li>
+                    <li class="list-group-item text-center">Text Left</li>
+                    <li class="list-group-item text-center">Text Right</li>
+                </div>
+
+                <div class="card-body text-right">
+                    <h4 class="card-title">Another Card Body!</h4>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary">Another Link</a>
+                </div>
+            </div>
+
+            <div class="card-deck mt-5">
+                <div class="card w-25 bg-success text-light">
+                    <div class="card-header">
+                        <h3>Cards</h3>
+                        <h6>...Are Awesome</h6>
+                    </div>
+
+                    <div class="overlay overlay-success">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Awesomeness!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-success border-white">Learn More</a>
+                    </div>
+
+                    <div class="list-group list-group-flush text-primary">
+                        <li class="list-group-item text-center">Text Center</li>
+                        <li class="list-group-item text-center">Text Left</li>
+                        <li class="list-group-item text-center">Text Right</li>
+                    </div>
+
+                    <div class="card-body text-right">
+                        <h4 class="card-title">Another Card Body!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-success border-white">Another Link</a>
+                    </div>
+                </div>
+
+                <div class="card w-25 bg-danger text-light">
+                    <div class="card-header">
+                        <h3>Cards</h3>
+                        <h6>...Are Awesome</h6>
+                    </div>
+
+                    <div class="overlay overlay-danger">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Awesomeness!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-danger border-white">Learn More</a>
+                    </div>
+
+                    <div class="list-group list-group-flush text-primary">
+                        <li class="list-group-item text-center">Text Center</li>
+                        <li class="list-group-item text-center">Text Left</li>
+                        <li class="list-group-item text-center">Text Right</li>
+                    </div>
+
+                    <div class="card-body text-right">
+                        <h4 class="card-title">Another Card Body!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-danger border-white">Another Link</a>
+                    </div>
+                </div>
+
+                <div class="card w-25 bg-primary text-light">
+                    <div class="card-header">
+                        <h3>Cards</h3>
+                        <h6>...Are Awesome</h6>
+                    </div>
+
+                    <div class="overlay overlay-primary">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Awesomeness!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-primary border-white">Learn More</a>
+                    </div>
+
+                    <div class="list-group list-group-flush text-primary">
+                        <li class="list-group-item text-center">Text Center</li>
+                        <li class="list-group-item text-center">Text Left</li>
+                        <li class="list-group-item text-center">Text Right</li>
+                    </div>
+
+                    <div class="card-body text-right">
+                        <h4 class="card-title">Another Card Body!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-primary border-white">Another Link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-group mt-5">
+                <div class="card w-25 bg-success text-light">
+                    <div class="card-header">
+                        <h3>Cards</h3>
+                        <h6>...Are Awesome</h6>
+                    </div>
+
+                    <div class="overlay overlay-success">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Awesomeness!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-success border-white">Learn More</a>
+                    </div>
+
+                    <div class="list-group list-group-flush text-primary">
+                        <li class="list-group-item text-center">Text Center</li>
+                        <li class="list-group-item text-center">Text Left</li>
+                        <li class="list-group-item text-center">Text Right</li>
+                    </div>
+
+                    <div class="card-body text-right">
+                        <h4 class="card-title">Another Card Body!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-success border-white">Another Link</a>
+                    </div>
+                </div>
+
+                <div class="card w-25 bg-danger text-light">
+                    <div class="card-header">
+                        <h3>Cards</h3>
+                        <h6>...Are Awesome</h6>
+                    </div>
+
+                    <div class="overlay overlay-danger">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Awesomeness!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-danger border-white">Learn More</a>
+                    </div>
+
+                    <div class="list-group list-group-flush text-primary">
+                        <li class="list-group-item text-center">Text Center</li>
+                        <li class="list-group-item text-center">Text Left</li>
+                        <li class="list-group-item text-center">Text Right</li>
+                    </div>
+
+                    <div class="card-body text-right">
+                        <h4 class="card-title">Another Card Body!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-danger border-white">Another Link</a>
+                    </div>
+                </div>
+
+                <div class="card w-25 bg-primary text-light">
+                    <div class="card-header">
+                        <h3>Cards</h3>
+                        <h6>...Are Awesome</h6>
+                    </div>
+
+                    <div class="overlay overlay-primary">
+                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="">
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Awesomeness!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-primary border-white">Learn More</a>
+                    </div>
+
+                    <div class="list-group list-group-flush text-primary">
+                        <li class="list-group-item text-center">Text Center</li>
+                        <li class="list-group-item text-center">Text Left</li>
+                        <li class="list-group-item text-center">Text Right</li>
+                    </div>
+
+                    <div class="card-body text-right">
+                        <h4 class="card-title">Another Card Body!</h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="#" class="btn btn-primary border-white">Another Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>
