@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style media="screen">
+        .img{
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+        .carousel-inner div:nth-child(1) .img{
+            background-image: url("Images/1.jpg");
+        }
+        .carousel-inner div:nth-child(2) .img{
+            background-image: url("Images/2.jpg");
+        }
+        .carousel-inner div:nth-child(3) .img{
+            background-image: url("Images/3.jpg");
+        }
+        .controller{
+            opacity: 1;
+        }
+        .controller span
+        {
+            opacity: 1;
+            height: 140px;
+            width: 70px;
+            background-size: 28px;
+            background-color: #3B3B3B;
+            opacity: 0.8;
+        }
+        .controller span:hover{
+            opacity: 0.4;
+        }
+        .carousel-indicators li{
+            background-color: white;
+            height: 5px;
+            width: 60px;
+            opacity: 1;
+        }
+        .carousel-indicators li.active{
+            background-color: deepskyblue;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="img"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="img"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="img"></div>
+            </div>
+        </div>
+        <a class="carousel-control-prev controller" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next controller" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
