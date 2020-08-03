@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Code Blocks</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            for (var i = 0; i < 10; i++) {
+                console.log(i);
+            }
+            console.log(i);
+            if (10) {
+                var name = "cormac";//scope
+                let name2 = "cormac";//blocks
+                if (true) {
+                    console.log(name);
+                    console.log(name2);
+                }
+            }
+            console.log(name);
+            // console.log(name2);
+            for (var i = 0; i < 10; i++) {
+                setTimeout(function() {
+                    console.log(i);
+                },0);
+             }
+             console.log(i);
+
+            for (let i = 0; i < 10; i++) {
+                setTimeout(function() {
+                    console.log(i);
+                },500);
+             }
+             console.log(i);
+
+             for (var i = 0; i < 10; i++) {
+                 setTimeout(function() {
+                     console.log(10-i);
+                     i--;
+                 },500);
+             }
+             console.log(i);
+             for (var i = 0; i < 10; i++) {
+                 (function(){
+                     var oldI = i;
+                    setTimeout(function() {
+                     console.log(oldI);
+                     },500);
+                 })();
+             }
+             console.log(i);
+
+
+             {
+                 let connectionKey = "tyyayv6ews6546";
+                 function connect(key) {
+                     console.log("Success");
+                 }
+                 connect(connectionKey);
+             }
+        </script>
+    </body>
+</html>
