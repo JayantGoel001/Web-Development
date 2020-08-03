@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Quirky AND OR</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            if (10||0) {
+                console.log("true");
+            }
+
+            console.log(10||100);
+            console.log(0||100);
+
+            console.log(10||doThis());
+
+            function doThis() {
+                console.log("Do This");
+            }
+
+            console.log(10&&100);
+
+            let myMessage;
+            myMessage = "Awesomness";
+            let myValue = myMessage || "Awe";
+            console.log(myValue);
+
+            var obj={
+                doSomething:function(){
+                    console.log("doSomething");
+                }
+            }
+
+            obj.doSomething && obj.doSomething();
+        </script>
+    </body>
+</html>
