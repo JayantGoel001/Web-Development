@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lexical Scope & CLosures</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let thing = "Thing";
+
+            function doThing() {
+                console.log(thing);
+
+                let name = "Cormac";
+                console.log(name);
+
+                function what() {
+                    console.log(name);
+                }
+            }
+
+            doThing();
+
+            function persons() {
+                let people = [];
+                return function(name="John") {
+                    people.push(name)
+                    console.log("I am a person "+name);
+                    return people;
+                };
+            }
+
+            let personGenerator = persons();
+            personGenerator("Cormac");
+            personGenerator("King");
+            console.log(personGenerator());
+
+
+            function CharacterControler(CharacterName) {
+                let name = CharacterName;
+                let hp = 100;
+                let lvl = 1;
+
+                function drinkPortion(){
+                    console.log(`${name} has drunk a portion and recovered all hp.`);
+                    hp = 100;
+                }
+
+                function takeDMG(dmg) {
+                    hp -= dmg;
+                    console.log(`${name} has taken ${dmg} points of damage is currently at ${hp} HP.`);
+                    if (hp<=0) {
+                        return gameOver();
+                    }
+                }
+                function gameOver() {
+                    console.log(`GAME OVER -${name} was level ${lvl}`);
+                }
+                function levelUp() {
+                    lvl++;
+                    console.log(`GAME has level up to level ${lvl}`);
+                }
+
+                function getHP() {
+                    return hp;
+                }
+
+                return {
+                    drinkPortion : drinkPortion,
+                    takeDMG : takeDMG,
+                    levelUp : levelUp,
+                    getHP : getHP
+                };
+            }
+
+            player = CharacterControler("Cormac");
+
+            player.takeDMG(43);
+            player.levelUp();
+            player.takeDMG(53);
+            player.drinkPortion();
+            player.levelUp();
+            console.log(player.getHP());
+            player.takeDMG(100);
+
+
+
+        </script>
+    </body>
+</html>
