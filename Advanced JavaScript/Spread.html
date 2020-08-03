@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Spread</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function add(...num) {
+                let sum =0;
+                for (var i = 0; i < num.length; i++) {
+                    sum += num[i];
+                }
+                return sum;
+            }
+            console.log(add(43,6564,3423));
+
+
+            let arr = ["Cormac","How are u?"];
+            function greet(name,greeting) {
+                console.log(`Hello , ${name} . ${greeting}`);
+            }
+
+            greet(...arr);
+            greet(arr[0],arr[1]);
+
+            let nums = [123,3546,4256,23457];
+
+            console.log(Math.max(...nums));
+
+
+            let num1 = [1,2,3,4];
+            let num2 = [5,6,7,8];
+
+            let all = [];
+            all = [...num1,000,...num2];
+            console.log(all);
+
+            let earthing = {
+                race:"human",
+                planet:"earth"
+            }
+            let me = {
+                ...earthing,
+                name : "Cormac",
+                race:"mars"
+            }
+            console.log(me);
+        </script>
+    </body>
+</html>
