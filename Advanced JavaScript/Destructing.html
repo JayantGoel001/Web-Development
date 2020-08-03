@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Destructing</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let arr = ["value 1","value 2","value 3","value 4"];
+
+            let val0 = arr[0];
+            let val1 = arr[1];
+            let val2 = arr[2];
+            let val3 = arr[3];
+            console.log(val0);
+            console.log(val1);
+            console.log(val2);
+            console.log(val3);
+
+            let [v1,v2,v3,v4] = arr;
+
+            console.log(v1);
+            console.log(v2);
+            console.log(v3);
+            console.log(v4);
+
+            let x = 12;
+            let y = 42;
+            [y,x] = [x,y];
+            console.log(x);
+            console.log(y);
+
+            let obj = {
+                title:"Awesome",
+                body : "Lorem..."
+            }
+            console.log(obj);
+
+
+            let {title,body} = obj;
+
+            console.log(title);
+            console.log(body);
+
+            title = obj.title;
+            body = obj.body;
+
+            console.log(title);
+            console.log(body);
+
+            function controller(name,{body}) {
+                console.log("Name:",name);
+                console.log("Body:",body);
+            }
+            // controller("Cormac",obj.body);
+            controller("Cormac",obj);
+
+        </script>
+    </body>
+</html>
