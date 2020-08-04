@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Array Functional Methods</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let arr = [10,20,30,40,50];
+            let mappedArr = arr.map(function(value,index,array) {
+                console.log(value ** 2);
+                console.log(index);
+                console.log(array);
+                console.log("  ");
+                return value;
+            });
+
+            let filter = arr.filter(function(value,index,array) {
+                return value**2>1000;
+            });
+            console.log(filter);
+            let filter2 = arr.filter(function(value,index,array) {
+                return index == 0 || index == array.length-1;
+            });
+            console.log(filter2);
+
+            //acc  = 1 and value = 2
+            let reduceArray = arr.reduce(function(acc,value,index,array) {
+                return acc + value;
+            });
+            //acc  = 0 and value = 1
+            let reduceArray2 = arr.reduce(function(acc,value,index,array) {
+                return acc + value;
+            },0);
+            console.log(reduceArray2);
+
+            let bool1 = arr.some(function(value,index) {
+                return value>4 && index==4;
+            });
+            console.log(bool1);
+            let bool2 = arr.every(function(value) {
+                return value>40 && typeof value == "number";
+            });
+            console.log(bool2);
+        </script>
+
+    </body>
+</html>
