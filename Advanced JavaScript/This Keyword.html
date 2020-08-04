@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>This Keyword</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var me = "Cormac";
+            console.log(this.me);
+            let me2 = "Cormac";//It does not attach to global scope
+            console.log(this.me2);
+
+            function sleep() {
+                console.log(this);
+                console.log(`${this.name} is going to sleep now.`);
+            }
+            var person = {
+                name:"Cormac",
+                sleep:sleep
+            }
+            person.sleep();
+
+            var people = {
+                name:"Cormac",
+                sleep:function() {
+                    console.log(this);
+                    console.log(`${this.name} is going to sleep now.`);
+                }
+            }
+            let sleepypeople = people.sleep;
+            sleepypeople();
+
+            function eatAndDrink(food,drink) {
+                console.log(`${this.name} is about to drink some ${drink} and eat some ${food}.`);
+            }
+            eatAndDrink("Noodles","Iced Tea");
+
+            eatAndDrink.call(person,"Noodles","Iced Tea");
+
+            eatAndDrink.apply(person,["Noodles","Iced Tea"]);
+
+            let func = eatAndDrink.bind(person,"Noodles","Ice Tea");
+            setTimeout(function() {
+                func();
+            },100);
+            func();
+
+            var people2O = {
+                name:"Cormac",
+                sleep:function() {
+                    console.log(`${this.name} is going to sleep now.`);
+                    setTimeout(function() {
+                        console.log(`${this.name} has just woke up.`);
+                    },2000);
+                }
+            }
+            people2O.sleep();
+            var people4O = {
+                name:"Cormac",
+                sleep:function() {
+                    console.log(`${this.name} is going to sleep now.`);
+                    setTimeout(function() {
+                        console.log(`${this.name} has just woke up.`);
+                    }.bind(this),2000);
+                }
+            }
+            people4O.sleep();
+
+            function Person123(name) {
+                this.name = name;
+            }
+
+            let meName = new Person123("Cormac");
+            console.log(meName.name);
+
+            
+        </script>
+    </body>
+</html>
