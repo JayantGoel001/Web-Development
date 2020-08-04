@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Object Oriented Programming</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let obj ={
+                name:"Cormac",
+                sleep:function() {
+                    console.log(`${this.name} is going to sleep.`);
+                }
+            }
+            obj.sleep();
+
+            function Enemy(name,lvl=1) {
+                this.name = name;
+                this.lvl = lvl;
+                this.hp = 100 + (this.lvl * 10);
+                this.findPlayer=function() {
+                    console.log("looking for player.");
+                }
+                this.takeDMG = function(num) {
+                    this.hp -= num;
+                    console.log(`${this.name} is at ${this.hp} HP`);
+                }
+            }
+            let weakEnemy = new Enemy("John Dibble");
+            weakEnemy.findPlayer();
+            weakEnemy.takeDMG(44);
+
+            let strongEnemy = new Enemy("John strong",23);
+            strongEnemy.findPlayer();
+            strongEnemy.takeDMG(44);
+
+        </script>
+    </body>
+</html>
