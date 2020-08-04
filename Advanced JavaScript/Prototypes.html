@@ -14,8 +14,8 @@
                 console.log(`${this.name} is going to sleep`);
             }
 
-            Person.prototype.eat = function() {
-                console.log(`${this.name} is going to eat`);
+            Person.prototype.eat = function(eating) {
+                console.log(`${this.name} is going to eat ${eating}`);
             }
             let me = new Person("Cormac");
 
