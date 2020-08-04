@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Inheritance</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype.sleep = function() {
+                console.log(`${this.name} is going to sleep`);
+            }
+
+            Person.prototype.eat = function(eating) {
+                console.log(`${this.name} is going to eat ${eating}`);
+            }
+
+            function WebDev(name,skills) {
+                Person.call(this,name);
+                this.skills = skills;
+            }
+
+            WebDev.prototype = Object.create(Person.prototype);
+
+            WebDev.prototype.debugCode = function() {
+                console.log(`${this.name} is debugging some code..`);
+            }
+
+            WebDev.prototype.learningSkill = function(skill) {
+                console.log(`${this.name} just learned ${skill}`);
+                this.skills.push(skill);
+                return this.skills;
+            }
+
+            let me = new WebDev("Cormac",["HTML","CSS","javascript","Angular","SQL"]);
+            me.eat("Candy");
+            me.debugCode();
+            console.log(me.learningSkill("Ruby no rails"));
+
+            let randomPerson = new Person("Joe");
+            randomPerson.eat("POPCORN");
+            // randomPerson.debugCode();
+            console.log(me);
+            console.log("===================");
+            console.log(me.__proto__);
+            console.log("===================");
+            console.log(me.__proto__.__proto__);
+
+            // function createObj(obj) {
+            //     var object = {};
+            //     object.__proto__ = obj;
+            //     return object;
+            // }
+        </script>
+    </body>
+</html>
