@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Prototypes</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype.sleep = function() {
+                console.log(`${this.name} is going to sleep`);
+            }
+
+            Person.prototype.eat = function() {
+                console.log(`${this.name} is going to eat`);
+            }
+            let me = new Person("Cormac");
+
+            let elon = new Person("Elon");
+
+            console.log(me);
+            console.log(elon);
+
+            me.sleep();
+            elon.sleep();
+            console.log(this);
+            console.log(me.__proto__);
+            me.__proto__.sleep.call(me);
+
+            console.log(me.__proto__.__proto__);
+            console.log(me.constructor);
+
+            let someElse = new me.constructor("Cormac");
+            someElse.eat("Chicken");
+        </script>
+    </body>
+</html>
