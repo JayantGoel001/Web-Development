@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>ES2015 OOPS Syntax</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            class Person{
+                constructor(name){
+                    this.name = name;
+                }
+                sleep(){
+                    console.log(`${this.name} is going to sleep.`);
+                }
+            }
+            let me2 = new Person("Jesse");
+            me2.sleep();
+
+            class WebDev extends Person{
+                constructor(name,skills){
+                    super(name);
+                    this.skills = skills;
+                }
+                learnNewSkill(skill){
+                    console.log(`${this.name} just learned ${skill}`);
+                }
+                static isWebDev(obj){
+                    return obj.constructor === WebDev;
+                }
+            }
+
+            let me = new WebDev("Jesse",["HTML","CSS"]);
+            me.learnNewSkill("PHP");
+
+            console.log(WebDev.isWebDev(me));
+
+            let me3 = new Person("Jesse");
+            console.log(WebDev.isWebDev(me3));
+        </script>
+    </body>
+</html>

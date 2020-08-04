@@ -35,6 +35,9 @@
                 return this.skills;
             }
 
+            WebDev.isWebDev = function(obj) {
+                return obj.constructor === WebDev;
+            }
             let me = new WebDev("Cormac",["HTML","CSS","javascript","Angular","SQL"]);
             me.eat("Candy");
             me.debugCode();
