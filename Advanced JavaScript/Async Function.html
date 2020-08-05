@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Async Functions</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            async function doThis() {
+                await new Promise(function(resolve,reject) {
+                    setTimeout(()=>{
+                        console.log("First");
+                        resolve();
+                    },900);
+                })
+                console.log("Second");
+            }
+            doThis();
+            console.log("third");
+            async function controlFlow() {
+                await doThis();
+                console.log("Fourth");
+            }
+            controlFlow();
+            console.log("Fifth");
+
+        </script>
+    </body>
+</html>
