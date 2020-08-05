@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Promises</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            setTimeout(()=>{
+                console.log("Do This");
+                setTimeout(()=>{
+                    console.log("Then Do This");
+                    setTimeout(()=>{
+                        console.log("....Then Do This");
+                        setTimeout(()=>{
+                            console.log("Then finally This");
+                            setTimeout(()=>{
+                                console.log("yeah This");
+                            },800);
+                        },800);
+                    },800);
+                },300);
+            },500);
+
+            let promise = new Promise((resolve,reject)=>
+            {
+                console.log("I promise");
+                setTimeout(()=>
+                {
+                    resolve("I am resolved");
+                    // reject("I am error");
+                },1000);
+            });
+            promise.then((value)=>{
+                console.log(value);
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>
+                    {
+                        resolve("Finished");
+                    },1000);
+                });
+            },(err)=>{
+                  console.log(err);
+            }).then((value)=>{
+                console.log(value);
+            });
+            ,.catch((err)=>{
+            console.log(err);
+        })
+            console.log("Hello");
+            function getPromises(msg,timout) {
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>
+                    {
+                        console.log(msg);
+                        resolve(msg);
+                    },timout);
+                });
+            }
+            let promise2 = getPromises("Do this",500).then(()=>{
+                return getPromises("Then Do this",700).then(()=>{
+                    return getPromises(".........Then Do this",1000).then(()=>{
+                        return getPromises("finally..Then Do this",800).then(()=>{
+                            return getPromises("finally.",1000);
+                        });
+                    });
+                });
+            });
+
+            let p1 = getPromises("First",1200);
+            let p2 = getPromises("Second",1200);
+            let p3 = getPromises("Third",1200);
+
+            Promise.all([p1,p2,p3]).then((value)=>{
+                console.log(value);
+            });
+        </script>
+    </body>
+</html>
