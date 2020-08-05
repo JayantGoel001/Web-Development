@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Arrow</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            let toBool = (value) => !!value;
+            console.log(toBool(10));
+            console.log(toBool(-0));
+
+            let toBool2 = value => !!value;
+            console.log(toBool2(10));
+            console.log(toBool2(-0));
+
+            setTimeout(()=>{
+                console.log("Hii");
+            },50);
+            let ar = [32,415,34,76,12];
+            let arr2 = ar.map((v) => v*2);
+            console.log(arr2);
+            var dog = {
+                name:"Lady",
+                bark:function() {
+                    console.log(`${this.name} started barking`);
+                    setTimeout(function() {
+                        console.log(`${this.name} stopped barking`);//name will be undefined
+                    },500);
+                }
+            }
+            dog.bark();
+
+            var dog2 = {
+                name:"Lady",
+                bark:function() {
+                    console.log(`${this.name} started barking`);
+                    setTimeout(()=> {
+                        console.log(`${this.name} stopped barking`);//name will work
+                    },500);
+                }
+            }
+            dog2.bark();
+        </script>
+    </body>
+</html>
