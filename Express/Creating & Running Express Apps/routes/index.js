@@ -18,5 +18,27 @@ router.get('/stats', function(req, res, next) {
     // res.send("<h1>Hello World</h1>");
     res.render('Stats', { title: 'Stats' });
 });
+router.get('/123/abc', function(req, res, next) {
+    res.send("<h1>Nothing Here</h1> <a href='/'>Go Back Home</a>");
+    // res.render('Stats', { title: 'Stats' });
+});
+router.get('/register', function(req, res, next) {
+    // res.send("<h1>Nothing Here</h1> <a href='/'>Go Back Home</a>");
+    res.render('register_form',{title : 'Register new Account'});
+});
+
+router.post('/register',function({body},res) {
+    console.log(body);
+    let submissionData = {
+        message:"credentials",
+        credentials : {
+            username: body.username,
+            password : body.password
+        }
+    }
+    console.log(submissionData);
+    res.json(submissionData);
+})
+
 
 module.exports = router;

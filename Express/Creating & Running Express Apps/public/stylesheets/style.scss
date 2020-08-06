@@ -14,8 +14,6 @@ h1{
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
 }
-
-
 a{
     color: #00B7FF;
 }
@@ -33,5 +31,46 @@ a{
     text-decoration: none;
     &:hover{
         opacity : 0.7;
+    }
+}
+@mixin invert-color {
+    background-color: $color;
+    color: white;
+}
+.btn{
+    @include invert-color();
+    display: inline-block;
+    padding: 0.6em 2.4em;
+    margin : 20px 0;
+    border-radius: 4px;
+}
+form{
+    ::placeholder{
+        color: inherit;
+    }
+    input{
+        width: 400px;
+        font-size: 18px;
+        color: $color;
+        display: block;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid;
+        margin: 46px 0;
+        padding: 6px 14px;
+    }
+    input[type="submit"]{
+        @include invert-color();
+        border-radius: 4px;
+        width: max-content;
+        font-size: 20px;
+        padding: 0.6em 3em;
+
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+    input:first-of-type{
+        margin: 0;
     }
 }
