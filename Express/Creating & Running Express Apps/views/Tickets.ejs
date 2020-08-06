@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@1&display=swap" rel="stylesheet">
-  </head>
-  <body>
-      <nav>
-          <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/shop">Shop</a></li>
-              <li><a href="/tickets">Tickets</a></li>
-              <li><a href="/stats">Stats</a></li>
-              <li><a href="/register">register</a></li>
-          </ul>
-      </nav>
+<%- include('partials/Header.ejs') %>
     <h1><%= title %></h1>
-    <h2>Hello Express</h2>
-    <h2>Hello Express</h2>
-    <p>Welcome to <%= title %></p>
-    <script src="/javascripts/script.js"></script>
-  </body>
-</html>
+<%- include('partials/footer.ejs') %>
 <!-- Ndodemon restarts the server automatically when we loads the changes -->

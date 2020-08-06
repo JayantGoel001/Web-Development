@@ -64,5 +64,23 @@ router.get('/users/:userid', function(req, res, next) {
     res.json(`Getting user with id : ${id}`);
 });
 
+router.get("/examples",function(req,res) {
+
+    let dataObj = {
+        title : "EJS",
+        body : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        backend: ["Express","MVC","Restful API","MongoDB"],
+        frontend : {
+            markup : "HTML",
+            styles : "Sass",
+            scripts : "JavaScript",
+            framework :{
+                css:"Bootstrap",
+                spa:"Angular"
+            }
+        }
+    }
+    res.render("ejs-example",dataObj);
+})
 
 module.exports = router;
