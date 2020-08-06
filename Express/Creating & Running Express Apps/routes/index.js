@@ -36,9 +36,33 @@ router.post('/register',function({body},res) {
             password : body.password
         }
     }
-    console.log(submissionData);
+    // console.log(submissionData);
     res.json(submissionData);
-})
+});
+
+router.get('/users', function(req, res, next) {
+    // res.json("GetUsers");
+    let msg = {
+        msg:"Finding all users",
+    };
+    let filters = [];
+    let role =req.query.role || "";
+    let recentSubs =req.query.new || "";
+    role && (filters.push({role:role}));
+    recentSubs && (filters.push({recentSubs:true}));
+    if (filters.length) {
+        msg.filters = filters;
+        msg.msg = "Finding users with a filter";
+    }
+    filters.length && (msg.filters = filters);
+    res.json(msg);
+
+});
+router.get('/users/:userid', function(req, res, next) {
+    // res.json("Get specific user");
+    let id = req.params.userid;
+    res.json(`Getting user with id : ${id}`);
+});
 
 
 module.exports = router;

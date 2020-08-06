@@ -65,4 +65,9 @@ form input[type="submit"] {
 form input:first-of-type {
   margin: 0; }
 
+.link-section {
+  margin-top: 22px; }
+  .link-section a {
+    margin-left: 8px; }
+
 /*# sourceMappingURL=style.css.map */
