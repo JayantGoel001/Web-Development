@@ -1,0 +1,19 @@
+<%- include('partials/Header.ejs') %>
+      <h1>Register New Account</h1>
+    <form autocomplete="off" action="/register" method="post">
+        <input type="text" name="username" placeholder="User Name" required>
+        <input type="password" name="password" placeholder="Pasword" required>
+        <input type="submit" name="submit" value="Register">
+    </form>
+    <div class="link-section">
+        <a href="/users">See all users</a>
+        <br>
+        <a href="/users/hkjgfd">See random users</a>
+    </div>
+    <div class="link-section">
+        <a href="/posts">See all posts</a>
+        <br>
+        <a href="/posts/5646">See random post</a>
+    </div>
+<%- include('partials/footer.ejs') %>
+<!-- Ndodemon restarts the server automatically when we loads the changes -->
