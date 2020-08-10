@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <h4 class="admin-text">
+        <% if (locals.isAdmin) { %>
+            Signed in as Admin/ <span class="sign-out" onclick="signOutAdmin();">Sign Out</span>
+        <% } else { %>
+            <span><a href="/admin-area" class="admin-area">Admin Area</a></span>
+        <% } %>
+    </h4>
+    
+    <div>
+        <a href="/" class="back-link">Back</a>
+        <h2 class="h1-anim transition">Admin Sign In</h2>
+        <form action="/admin-sign-in" method="post">
+            <input type="password" name="password" placeholder="Password">
+        </form>
+    </div>
+    
+    
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>
