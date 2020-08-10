@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    // res.header("Set-Cookie", "secret=express-12345");
+    res.header("Set-Cookie", "new-secret=express-12345");
     res.render('index', { title: 'HTTP' });
 });
 
