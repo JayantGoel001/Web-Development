@@ -22,6 +22,9 @@ putReqExample = function(req,res,next) {
 deleteReqExample = function(req,res,next) {
     res.json({message:'User Made a DELETE Request'});
 }
+getRestful = function(req,res) {
+    res.render("restful",{title:"RESTful Routing Architecture"});
+}
 
 module.exports = {
     getIndex,
@@ -29,5 +32,6 @@ module.exports = {
     getReqExample,
     postReqExample,
     putReqExample,
-    deleteReqExample
+    deleteReqExample,
+    getRestful
 }

@@ -12,4 +12,6 @@ router.post('/example/request', indexCtrl.postReqExample);
 router.put('/example/request', indexCtrl.putReqExample);
 router.delete('/example/request', indexCtrl.deleteReqExample);
 
+router.get("/restful",indexCtrl.getRestful);
+
 module.exports = router;
