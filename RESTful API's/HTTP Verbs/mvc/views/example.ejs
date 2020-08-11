@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs'); %>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form action="/example/request" method="post">
+        <input type="submit" class="btn" value="Make GET Request" formmethod="get">
+        <input type="submit" class="btn" value="Make POST Request">
+        <input type="submit" class="btn" value="Make PUT Request"
+        formaction="/example/request?_method=PUT">
+        <input type="submit" class="btn" value="Make DELETE Request"
+        formaction="/example/request?_method=DELETE">
+
+    </form>
+
+<%- include('partials/footer.ejs'); %>
