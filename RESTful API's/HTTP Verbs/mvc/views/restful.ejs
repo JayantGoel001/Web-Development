@@ -1,0 +1,56 @@
+<%- include('partials/header.ejs'); %>
+
+    <h1><%= title %></h1>
+    <p>CRUDing Users</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Path</th>
+            <th>HTTP Verb</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Index</td>
+            <td><code>/users</code></td>
+            <td>GET</td>
+            <td>Retrive all users.</td>
+        </tr>
+        <tr>
+            <td>New</td>
+            <td><code>/users/new</code></td>
+            <td>GET</td>
+            <td>Display a create user form.</td>
+        </tr>
+        <tr>
+            <td>Create</td>
+            <td><code>/users</code></td>
+            <td>POST</td>
+            <td>Create a user in the backend.</td>
+        </tr>
+        <tr>
+            <td>Show</td>
+            <td><code>/users/:userid</code></td>
+            <td>GET</td>
+            <td>Retrieve a specific user.</td>
+        </tr>
+        <tr>
+            <td>Edit</td>
+            <td><code>/users/:userid/edit</code></td>
+            <td>GET</td>
+            <td>Display an edit form for a specific user.</td>
+        </tr>
+        <tr>
+            <td>Update</td>
+            <td><code>/users/:userid</code></td>
+            <td>PUT</td>
+            <td>Update a specific user in the backend.</td>
+        </tr>
+        <tr>
+            <td>Destroy</td>
+            <td><code>/users/:userid</code></td>
+            <td>DELETE</td>
+            <td>Delete a specific user.</td>
+        </tr>
+    </table>
+
+<%- include('partials/footer.ejs'); %>
