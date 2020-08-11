@@ -1,0 +1,130 @@
+:root { font-size: 160%; }
+
+input, button { font-family: inherit; }
+
+a {
+    color: inherit;
+    font-size: 18px;
+    opacity: .8;
+}
+
+a.giant {
+    font-size: 46px;
+    margin: 1.4em;
+    display: inline-block;
+    opacity: 1;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    transition: all .2s;
+}
+
+a.giant:hover { opacity: .3; }
+
+/* This changes the style of text while it's highlighted (like when you selecting text to copy it to the clickboard.) */
+::selection {
+    color: blue;
+    color: rgb(32, 47, 228);
+    
+    /* By default the background color is semi-transparent, simply putting 'white' won't change that, for some reason this will. */
+    background-color: rgba(255,255,255,.99);
+}
+
+body {
+    padding: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    text-align: center;
+    background-image: linear-gradient(rgba(32, 47, 228, .7),rgba(32, 47, 228, .5)), url("/images/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+form { margin-top: 64px; }
+input { margin: 0 8px; }
+
+.inline { display: inline; }
+
+.btn {
+    padding: 12px 22px;
+    background-color: white;
+    border: none;
+    color: rgb(32, 47, 228);
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all .3s;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.btn:hover {
+    opacity: .5;
+}
+
+table, th, td { border: 1px solid rgba(255, 255, 255, .5); }
+
+table {
+    border-collapse: collapse;
+    margin: 72px auto 0;
+}
+
+th, td {
+    padding: 8px 60px;
+    text-align: left;
+}
+
+th {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+td { font-weight: 300; }
+
+input[type="text"] {
+    display: block;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 400px;
+    border-bottom: 1px solid white;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 180px auto 32px;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+}
+
+::placeholder { color: white; }
+
+.list {
+    margin-top: 120px;
+}
+
+.list li {
+    margin: 28px;
+    list-style: none;
+    font-size: 36px;
+    transition: all .2s;
+}
+
+.list a:hover { opacity: .3; }
+
+.list a {
+    font-size: inherit;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
