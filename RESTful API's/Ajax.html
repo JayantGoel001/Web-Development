@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>AJAX</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gelasio&display=swap">
+        <style media="screen">
+            body{font-family: 'Gelasio',serif; margin: 108px 180px;}
+            h2{font-weight: normal;}
+        </style>
+    </head>
+    <body>
+        <!-- AJAX = Async JavaScript And XML. -->
+        <h2></h2>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            let url;
+            url = "http://numbersapi.com/random/math";
+            $.ajax({
+                method :"GET",
+                url : url
+            }).done(function(res) {
+                $("h2").html(res);
+            })
+
+
+        </script>
+    </body>
+</html>
