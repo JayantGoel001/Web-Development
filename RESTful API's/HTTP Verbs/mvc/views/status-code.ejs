@@ -1,0 +1,60 @@
+<%- include('partials/header.ejs'); %>
+
+    <h1><%= title %></h1>
+
+    <table>
+        <tr>
+            <td>200</td>
+            <td>OK</td>
+            <td>Successful GET or POST request.</td>
+        </tr>
+        <tr>
+            <td>201</td>
+            <td>Created</td>
+            <td>Successful POST request.</td>
+        </tr>
+        <tr>
+            <td>204</td>
+            <td>No Content</td>
+            <td>Successful DELETE request.</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>Bad Request</td>
+            <td>An unsuccessful GET, POST or PUT request due to invalid content.</td>
+        </tr>
+        <tr>
+            <td>401</td>
+            <td>Unauthorized</td>
+            <td>Requesting a restricted URL with incorrect credentials.</td>
+        </tr>
+        <tr>
+            <td>403</td>
+            <td>Forbidden</td>
+            <td>Making a request that isn't allowed.</td>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>Not Found</td>
+            <td>Unsuccessful request due to an incorrent parameter in the URL.</td>
+        </tr>
+        <tr>
+            <td>405</td>
+            <td>Method Not Allowed</td>
+            <td>Request method not allowed for the given URL.</td>
+        </tr>
+        <tr>
+            <td>409</td>
+            <td>Conflict</td>
+            <td>Unsuccessful POST request when another object with the same data already exists.</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>Internal Server Error</td>
+            <td>Problem with your server or the database server.</td>
+        </tr>
+    </table>
+
+
+
+<%- include('partials/footer.ejs'); %>

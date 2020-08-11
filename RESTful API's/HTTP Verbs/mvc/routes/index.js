@@ -13,5 +13,6 @@ router.put('/example/request', indexCtrl.putReqExample);
 router.delete('/example/request', indexCtrl.deleteReqExample);
 
 router.get("/restful",indexCtrl.getRestful);
+router.get("/status-code",indexCtrl.getStatusCode);
 
 module.exports = router;

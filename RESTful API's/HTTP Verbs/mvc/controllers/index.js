@@ -8,22 +8,27 @@ getExample = function(req,res,next) {
 }
 
 getReqExample = function(req,res,next) {
-    res.json({message:'User Made a Get Request'});
+    res.statusJson(200,{message:'User Made a Get Request'});
 }
 
 postReqExample = function(req,res,next) {
-    res.json({message:'User Made a POST Request'});
+    res.statusJson(201,{message:'User Made a POST Request'});
 }
 
 putReqExample = function(req,res,next) {
-    res.json({message:'User Made a PUT Request'});
+    res.statusJson(401,{message:'User Made a PUT Request'});
 }
 
 deleteReqExample = function(req,res,next) {
-    res.json({message:'User Made a DELETE Request'});
+    res.statusJson(500,{message:'User Made a DELETE Request'});
 }
 getRestful = function(req,res) {
     res.render("restful",{title:"RESTful Routing Architecture"});
+
+}
+
+getStatusCode = function(req,res) {
+    res.render("status-code",{title:"HTTP Status Code."});
 }
 
 module.exports = {
@@ -33,5 +38,6 @@ module.exports = {
     postReqExample,
     putReqExample,
     deleteReqExample,
-    getRestful
+    getRestful,
+    getStatusCode
 }
