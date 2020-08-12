@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Country = mongoose.model("Country");
-
+let countryData = require('../../country_data');
 getCountries = function(req, res, next) {
     Country.find((err,countries)=>{
         if(err){
@@ -86,6 +86,16 @@ deleteCountry = function({params}, res, next) {
     });
 }
 
+reset = function(req,res) {
+    Country.deleteMany({},(err,info)=>{
+        if(err){
+            return res.json({error:err});
+        }
+        Country.insertMany(countryData,(err,info)=>{
+            res.redirect("/countries");
+        });
+    })
+}
 module.exports = {
     getCountries,
     getCountryForm,
@@ -93,5 +103,6 @@ module.exports = {
     getCountry,
     getEditCountryForm,
     editCountry,
-    deleteCountry
+    deleteCountry,
+    reset
 }

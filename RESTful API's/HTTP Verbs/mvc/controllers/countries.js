@@ -28,9 +28,12 @@ getCountry = function({params}, res, next) {
         if(err){
             return res.json({error:err});
         }
-        let country = JSON.parse(body).country;
+        body = JSON.parse(body);
+        if (body.error) {
+            return res.send({error:body.error});
+        }
         if (response.statusCode === 200) {
-            return res.render('country', { title: "Country Interface",country:country });
+            return res.render('country', { title: "Country Interface",country:body.country });
         }
         else {
             res.json({message:"Something went wrong."});
