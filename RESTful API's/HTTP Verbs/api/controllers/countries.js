@@ -13,7 +13,7 @@ getCountries = function(req, res, next) {
 }
 
 getCountryForm = function(req, res, next) {
-    res.statusJson(200, { message: "Get Create Country form" });
+    res.render("form",{title:"Create A Country"});
 }
 
 createCountry = function({body}, res, next) {
@@ -36,18 +36,22 @@ getCountry = function({params}, res, next) {
     Country.findById(params.countryid,(err,country)=>{
         if(err){
             return res.json({error:err});
-            res.statusJson(200, {
+        }
+        res.statusJson(200, {
                  message: "Get Specific Country",
                  country:country
              });
-        }
     })
 }
 
-getEditCountryForm = function(req, res, next) {
-    res.statusJson(200, { message: "Get The Form For Editing A Country" });
+getEditCountryForm = function({params}, res, next) {
+    Country.findById(params.countryid,(err,country)=>{
+        if(err){
+            return res.json({error:err});
+        }
+        res.render("form",{title:"Edit a Country.",country:country});
+    });
 }
-
 editCountry = function({body,params}, res, next) {
     if (!body.name) {
         return statusJson(400,"Missing name for Country.");

@@ -16,6 +16,6 @@ router.route("/country/:countryid")
 
 router.route("/countries")
       .get(countryCtrl.getCountries)
-      .put(countryCtrl.createCountry);
+      .post(countryCtrl.createCountry);
 
 module.exports = router;
