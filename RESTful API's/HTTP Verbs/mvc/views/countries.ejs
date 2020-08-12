@@ -11,7 +11,7 @@
         <ul class="list">
 
             <% for(let i = 0; i < countries.length; i++) { %>
-                <li><a href="/countries/<%= countries[i]._id %>">
+                <li><a href="/countries/<%= countries[i].fakeid %>">
                     <%= countries[i].name %>
                 </a></li>
             <% } %>
