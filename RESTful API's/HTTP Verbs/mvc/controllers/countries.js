@@ -57,6 +57,9 @@ createCountry = function({body}, res, next) {
         if (response.statusCode === 400) {
             return res.json(body);
         }
+        if (response.body.error) {
+            return res.json({error:response.body.error});
+        }
 
         if (response.statusCode === 201) {
             return res.redirect('/countries');

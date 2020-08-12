@@ -197,4 +197,8 @@ let countryData = [
     { name: "Zimbabwe" },
 ];
 
+for (var i = 0; i < countryData.length; i++) {
+    countryData[i].fakeid = i + 1;
+}
+
 module.exports = countryData

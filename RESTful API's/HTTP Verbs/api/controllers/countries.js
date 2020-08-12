@@ -20,21 +20,36 @@ createCountry = function({body}, res, next) {
     if (!body.name) {
         return res.statusJson(400,{message:"Missing name for the country"});
     }
-    country = {name:body.name}
-    Country.create(country,(err,newCountry)=>{
+    Country.find({},null,{sort : { fakeid : 1 }},(err,countries)=>{
         if(err){
-            return res.json({error:err});
+            return res.send({error:err});
         }
-        res.statusJson(201,{
-            message:"Created New Country",
-            newCountry:newCountry
+        for (var i = 0; i < countries.length; i++) {
+            if (countries[i].fakeid!=i+1) {
+                var newID = i+1;
+                break;
+            }
+        }
+        country = {
+            name:body.name,
+            fakeid:newID || countries.length + 1
+        }
+
+        Country.create(country,(err,newCountry)=>{
+            if(err){
+                return res.json({error:err});
+            }
+            res.statusJson(201,{
+                message:"Created New Country",
+                newCountry:newCountry
+            });
+            // res.redirect("/countries");
         });
-        // res.redirect("/countries");
     });
 }
 
 getCountry = function({params}, res, next) {
-    Country.findById(params.countryid,(err,country)=>{
+    Country.findOne({fakeid : params.countryid},(err,country)=>{
         if(err){
             return res.json({error:err});
         }
