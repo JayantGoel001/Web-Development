@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs'); %>
+
+    <h1><%= title %></h1>
+
+    <h5><a href="api/countries/new">Add Country to API</a></h5>
+
+    <% if(locals.countries && countries.length <= 0) { %>
+        <h2 style="font-weight: 300; margin-top: 88px;">No countries to show</h2>
+        <a href="/">Home</a>
+    <% } else { %>
+
+        <ul class="list">
+
+            <% for(let i = 0; i < countries.length; i++) { %>
+                <li><a href="/countries/<%= countries[i]._id %>">
+                    <%= countries[i].name %>
+                </a></li>
+            <% } %>
+        </ul>
+
+    <% } %>
+
+
+<%- include('partials/footer.ejs'); %>

@@ -25,10 +25,11 @@ createCountry = function({body}, res, next) {
         if(err){
             return res.json({error:err});
         }
-        res.statusJson(201,{
-            message:"Created New Country",
-            newCountry:newCountry
-        });
+        // res.statusJson(201,{
+        //     message:"Created New Country",
+        //     newCountry:newCountry
+        // });
+        res.redirect("/countries");
     });
 }
 
