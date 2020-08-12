@@ -1,6 +1,6 @@
 const request = require('request');
 
-let domainPath = "http://localhost:3000"
+let domainPath = "http://localhost:3000";
 getCountryList = function(req, res, next) {
     const path = "/api/countries";
     const requestOption = {
@@ -37,14 +37,74 @@ getCountry = function({params}, res, next) {
         }
     });
 }
-createCountry = function(req, res, next) {
-  res.render('index', { title: 'RESTful Routing' });
+createCountry = function({body}, res, next) {
+    const path = `/api/countries/`;
+    const requestOption = {
+        url : `${domainPath}${path}`,
+        method:"POST",
+        json:{
+            name:body.name
+        }
+    };
+    request(requestOption,(err,response,body)=>{
+        if(err){
+            return res.json({error:err});
+        }
+
+        if (response.statusCode === 400) {
+            return res.json(body);
+        }
+
+        if (response.statusCode === 201) {
+            return res.redirect('/countries');
+        }
+        else {
+            res.json({message:"Something went wrong."});
+        }
+    });
 }
-editCountry = function(req, res, next) {
-  res.render('index', { title: 'RESTful Routing' });
+editCountry = function({params,body}, res, next) {
+    const path = `/api/country/${params.countryid}`;
+    const requestOption = {
+        url : `${domainPath}${path}`,
+        method:"PUT",
+        json:{
+            name:body.name
+        }
+    };
+    request(requestOption,(err,response,body)=>{
+        if(err){
+            return res.json({error:err});
+        }
+
+        if (response.statusCode === 400) {
+            return res.json(body);
+        }
+
+        if (response.statusCode === 201) {
+            return res.redirect('/countries');
+        }
+        else {
+            res.json({messagess:"Something went wrong."});
+        }
+    });
 }
-deleteCountry = function(req, res, next) {
-  res.render('index', { title: 'RESTful Routing' });
+deleteCountry = function({params}, res, next) {
+    const path = `/api/country/${params.countryid}`;
+    const requestOption = {
+        url : `${domainPath}${path}`,
+        method:"DELETE"
+    };
+    request(requestOption,(err,response,body)=>{
+        if(err){
+            return res.json({error:err});
+        }
+
+        if (response.statusCode === 404) {
+            return res.json(body);
+        }
+        return res.redirect('/countries');
+    });
 }
 
 
