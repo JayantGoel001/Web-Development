@@ -2,21 +2,28 @@ var express = require('express');
 var router = express.Router();
 
 let countryCtrl = require('../controllers/countries');
+let apiGuard = function(req,res,next) {
+    if (req.get('host')!="localhost:3000") {
+        res.json({error:"Cannot create, update nor Delete from the API while in production"})
+    } else {
+        next();
+    }
+}
 
 router.route("/countries/new")
-      .get(countryCtrl.getCountryForm);
+      .get(apiGuard,countryCtrl.getCountryForm);
 
 router.route("/countries/:countryid/edit")
-      .get(countryCtrl.getEditCountryForm);
+      .get(apiGuard,countryCtrl.getEditCountryForm);
 
 router.route("/country/:countryid")
       .get(countryCtrl.getCountry)
-      .put(countryCtrl.editCountry)
-      .delete(countryCtrl.deleteCountry);
+      .put(apiGuard,countryCtrl.editCountry)
+      .delete(apiGuard,countryCtrl.deleteCountry);
 
 router.route("/countries")
       .get(countryCtrl.getCountries)
-      .post(countryCtrl.createCountry);
+      .post(apiGuard,countryCtrl.createCountry);
 
 router.get("/reset",countryCtrl.reset);
 module.exports = router;
