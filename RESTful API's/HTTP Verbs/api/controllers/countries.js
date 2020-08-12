@@ -25,11 +25,11 @@ createCountry = function({body}, res, next) {
         if(err){
             return res.json({error:err});
         }
-        // res.statusJson(201,{
-        //     message:"Created New Country",
-        //     newCountry:newCountry
-        // });
-        res.redirect("/countries");
+        res.statusJson(201,{
+            message:"Created New Country",
+            newCountry:newCountry
+        });
+        // res.redirect("/countries");
     });
 }
 
@@ -66,7 +66,7 @@ editCountry = function({body,params}, res, next) {
         }
         country.name = body.name;
         country.save((err,updatedCountry)=>{
-            res.statusJson(201, { message: "Edit Specific Country",
+            res.statusJson(201, { message: "Updated Country",
             country:updatedCountry });
         });
     });
@@ -78,7 +78,7 @@ deleteCountry = function({params}, res, next) {
             return res.json({error:err});
         }
         if (!country) {
-            return statusJson({message:"Could Not Find Country."});
+            return statusJson(404,{message:"Could Not Find Country."});
         }
         res.statusJson(204,
             { message: "Delete Specific Country",
