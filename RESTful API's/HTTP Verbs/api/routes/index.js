@@ -3,6 +3,7 @@ var router = express.Router();
 
 let countryCtrl = require('../controllers/countries');
 let apiGuard = function(req,res,next) {
+    // next();
     if (req.get('host')!="localhost:3000") {
         res.json({error:"Cannot create, update nor Delete from the API while in production"})
     } else {
@@ -25,5 +26,5 @@ router.route("/countries")
       .get(countryCtrl.getCountries)
       .post(apiGuard,countryCtrl.createCountry);
 
-router.get("/reset",countryCtrl.reset);
+router.get("/reset",apiGuard,countryCtrl.reset);
 module.exports = router;
