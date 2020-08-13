@@ -4,7 +4,7 @@
 
 <div *ngIf="array.length>0">
     <strong>Related</strong>
-    <ul *ngFor="let value of array">
+    <ul *ngFor="let value of array | alphabateticalOrder:'desc'">
         <li> <a href="#">{{value}}</a></li>
     </ul>
 </div>
