@@ -2,7 +2,9 @@
 :root{
     font-size: 112%;
 }
-
+input,button{
+    font-family: inherit;
+}
 body{
     margin: 52px 212px;
     font-family: 'Exo',sans-serif;

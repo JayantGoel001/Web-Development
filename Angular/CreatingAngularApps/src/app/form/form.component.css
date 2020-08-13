@@ -1,0 +1,22 @@
+form{
+    background-color: #F5F5F5;
+    padding: 21px 21px 160px;
+    border-radius: 6px;
+    margin-top: 32px;
+}
+
+div{
+    margin: 18px 0;
+}
+label{
+    display: block;
+}
+input{
+    padding: 6px;
+    width: 100%;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+input[type="submit"]{
+    width: 50%;
+}
