@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { AiComponent } from './ai/ai.component';
 import { FormComponent } from './form/form.component';
+import { AwesomeifyPipe } from './awesomeify.pipe';
+import { AlphabateticalOrderPipe } from './alphabatetical-order.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         AiComponent,
-        FormComponent
+        FormComponent,
+        AwesomeifyPipe,
+        AlphabateticalOrderPipe
     ],
     imports: [
         BrowserModule,
