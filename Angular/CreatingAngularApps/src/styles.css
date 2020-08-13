@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    font-size: 112%;
+}
+
+body{
+    margin: 52px 212px;
+    font-family: 'Exo',sans-serif;
+    color: #202020;
+}
+h1,h2,h3{
+    font-family: 'Passion One',cursive;
+    font-weight: normal;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.4rem;
+}
+h3{
+    font-size: 1.8rem;
+}
