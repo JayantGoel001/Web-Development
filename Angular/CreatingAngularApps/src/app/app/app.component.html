@@ -3,15 +3,10 @@
 <h1>What is Computer Science?</h1>
 <hr>
 <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
-<h2>Subject : {{ title }}</h2>
-<h3>{{ object.headline }}</h3>
-<p>{{ object.description }}</p>
+<div style="display:flex; justify-content:space-between;">
+    <app-ai style="width:64%"></app-ai>
+    <app-form style="width:34%"></app-form>
 
-<div *ngIf="array.length>0">
-    <strong>Related</strong>
-    <ul *ngFor="let value of array">
-        <li> <a href="#">{{value}}</a></li>
-    </ul>
 </div>

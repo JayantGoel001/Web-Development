@@ -1,0 +1,10 @@
+<h2>Subject : {{ title }}</h2>
+<h3>{{ object.headline }}</h3>
+<p>{{ object.description }}</p>
+
+<div *ngIf="array.length>0">
+    <strong>Related</strong>
+    <ul *ngFor="let value of array">
+        <li> <a href="#">{{value}}</a></li>
+    </ul>
+</div>
