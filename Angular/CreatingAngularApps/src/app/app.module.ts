@@ -17,6 +17,8 @@ import { AlgorithmsComponent } from './algorithms/algorithms.component';
 import { CompressionComponent } from './compression/compression.component';
 import { InternetComponent } from './internet/internet.component';
 import { ProgrammingComponent } from './programming/programming.component';
+import { SecretComponent } from './secret/secret.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +35,9 @@ import { ProgrammingComponent } from './programming/programming.component';
         AlgorithmsComponent,
         CompressionComponent,
         InternetComponent,
-        ProgrammingComponent
+        ProgrammingComponent,
+        SecretComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,
