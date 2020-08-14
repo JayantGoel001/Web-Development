@@ -8,6 +8,8 @@ import { CompressionComponent } from './compression/compression.component';
 import { InternetComponent } from './internet/internet.component';
 import { AiComponent } from './ai/ai.component';
 import { ProgrammingComponent } from './programming/programming.component';
+import { SecretComponent } from './secret/secret.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
     {
@@ -19,6 +21,45 @@ const routes: Routes = [
         path:'',
         component:HomeComponent,
         pathMatch:'full'
+    },
+    {
+        path:'artificial-intelligence',
+        component:AiComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'compression',
+        component:CompressionComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'internet',
+        component:InternetComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'programming',
+        component:ProgrammingComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'algorithms',
+        component:AlgorithmsComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'secret/:key',
+        component:SecretComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'404',
+        component:NotFoundComponent,
+        pathMatch:'full'
+    },
+    {
+        path:'*',
+        redirectTo:'/404'
     },
 ];
 
