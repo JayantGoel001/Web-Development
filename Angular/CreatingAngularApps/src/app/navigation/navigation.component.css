@@ -1,0 +1,19 @@
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 62px;
+    font-size: 18px;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    transform: all 0.1s;
+    opacity: 0.8;
+}
+
+a:hover{
+    opacity: 1;
+}
