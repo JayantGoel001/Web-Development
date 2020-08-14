@@ -9,6 +9,14 @@ import { FormComponent } from './form/form.component';
 import { AwesomeifyPipe } from './awesomeify.pipe';
 import { AlphabateticalOrderPipe } from './alphabatetical-order.pipe';
 import { MagnifyDirective } from './magnify.directive';
+import { NavigationComponent } from './navigation/navigation.component';
+import { SubjectComponent } from './subject/subject.component';
+import { HomeComponent } from './home/home.component';
+import { CryptographyComponent } from './cryptography/cryptography.component';
+import { AlgorithmsComponent } from './algorithms/algorithms.component';
+import { CompressionComponent } from './compression/compression.component';
+import { InternetComponent } from './internet/internet.component';
+import { ProgrammingComponent } from './programming/programming.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +25,15 @@ import { MagnifyDirective } from './magnify.directive';
         FormComponent,
         AwesomeifyPipe,
         AlphabateticalOrderPipe,
-        MagnifyDirective
+        MagnifyDirective,
+        NavigationComponent,
+        SubjectComponent,
+        HomeComponent,
+        CryptographyComponent,
+        AlgorithmsComponent,
+        CompressionComponent,
+        InternetComponent,
+        ProgrammingComponent
     ],
     imports: [
         BrowserModule,

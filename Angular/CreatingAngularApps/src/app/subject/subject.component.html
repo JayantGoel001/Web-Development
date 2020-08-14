@@ -1,0 +1,18 @@
+<div style="display:flex; justify-content:space-between;">
+    <div style="width:64%">
+        <h2>Subject : {{ data.Subject }}</h2>
+        <h3>{{ data.headline }}</h3>
+        <p>{{ data.description }}</p>
+
+        <div *ngIf="data.related.length>0">
+            <!-- Structural Directives -->
+            <strong>Related</strong>
+            <ul *ngFor="let value of data.related | alphabateticalOrder:'desc'">
+                <li> <a href="#">{{value}}</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- Components Directive -->
+    <app-form style="width:34%"></app-form>
+</div>
