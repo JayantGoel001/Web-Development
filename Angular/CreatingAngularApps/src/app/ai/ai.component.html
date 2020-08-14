@@ -3,6 +3,7 @@
 <p>{{ object.description }}</p>
 
 <div *ngIf="array.length>0">
+    <!-- Structural Directives -->
     <strong>Related</strong>
     <ul *ngFor="let value of array | alphabateticalOrder:'desc'">
         <li> <a href="#">{{value}}</a></li>
