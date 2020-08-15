@@ -10,7 +10,7 @@ export class RequestsService {
 
     }
     public makeRequest(url):Promise<any> {
-        return this.http.get(url,{responseType:"Text"}).toPromise().then((value)=>{
+        return this.http.get(url,{responseType:"text"}).toPromise().then((value)=>{
             console.log(value);
             return value;
         }).catch((error)=>{

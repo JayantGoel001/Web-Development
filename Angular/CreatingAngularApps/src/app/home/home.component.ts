@@ -7,7 +7,7 @@ import { RequestsService } from "../requests.service";
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-     public mathString;
+    public mathString;
     constructor(private request : RequestsService) {
         this.mathString = this.request.makeRequest("http://numbersapi.com/random").then((val)=>{
             this.mathString = val;
