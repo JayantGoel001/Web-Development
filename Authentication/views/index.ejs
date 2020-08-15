@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+<head>
+    <title>Passport JS</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+    <style media="screen">
+
+        :root { font-size: 150%; }
+        h1, h2 { font-weight: normal; }
+        input {
+            font-family: inherit;
+            font-size: 18px;
+            display: block;
+            margin: 12px 0;
+            padding: 9px;
+            outline: none;
+            box-sizing: border-box;
+            width: 400px;
+        }
+
+        input:nth-child(1) { width: 320px; }
+        input:nth-child(2) { width: 400px; }
+        input:nth-child(3) { width: 420px; }
+        input:nth-child(4) { width: 370px; }
+        input:nth-child(5) { width: 360px; }
+
+        body {
+            margin: 72px 180px 0;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        form {
+            width: 40%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Passport JS</h1>
+    <div class="">
+        <a href="/users/authorize">Authorize</a>
+    </div>
+
+    <form action="/users/register" method="post" autocomplete="off">
+        <h2>Register a User</h2>
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="first_name" placeholder="First Name" autocomplete="off">
+        <input type="text" name="last_name" placeholder="Last Name" autocomplete="off">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password_confirm" placeholder="Confirm Password">
+        <input type="submit" value="Register">
+    </form>
+
+    <form action="/users/login" method="post">
+        <h2>Login</h2>
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+    </form>
+
+</body>
 </html>
