@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 import { HomeComponent } from './home/home.component';
 import { CryptographyComponent } from './cryptography/cryptography.component';
 import { AlgorithmsComponent } from './algorithms/algorithms.component';
