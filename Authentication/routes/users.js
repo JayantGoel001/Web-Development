@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+    res.send('respond with a resource');
 });
 
 router.post("/register",function({body},res) {
@@ -31,6 +31,24 @@ router.post("/register",function({body},res) {
             res.status(201).json({ message:"New User",user:newUser });
         }
     });
+});
+
+router.post("/login",function(req,res) {
+    var body = req.body;
+    if (!body.email || !body.password) {
+        return res.status(400).json({message:"All Fields are Required."});
+    }
+    passport.authenticate("local",(err,user,info)=>{
+        if (err) {
+            return res.status(400).json({message:err});
+        }
+        if (user) {
+            res.status(201).json({message:"Logged In"});
+        }
+        else {
+            res.status(401).json(info);
+        }
+    })(req,res);
 });
 
 module.exports = router;
